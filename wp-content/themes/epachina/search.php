@@ -4,28 +4,33 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
- * Index Template
+ * Search Template
  *
  *
- * @file           index.php
+ * @file           search.php
  * @package        Responsive 
  * @author         Emil Uzelac 
  * @copyright      2003 - 2013 ThemeID
  * @license        license.txt
  * @version        Release: 1.0
- * @filesource     wp-content/themes/responsive/index.php
- * @link           http://codex.wordpress.org/Theme_Development#Index_.28index.php.29
+ * @filesource     wp-content/themes/responsive/search.php
+ * @link           http://codex.wordpress.org/Theme_Development#Search_Results_.28search.php.29
  * @since          available since Release 1.0
  */
 ?>
 <?php get_header(); ?>
-        <div id="content" class="grid col-620">
-        
+
+        <div id="content-search" class="grid col-620">
+
 <?php if (have_posts()) : ?>
+
+    <h6><?php printf(__('Search results for: %s', 'responsive' ), '<span>' . get_search_query() . '</span>'); ?></h6>
 
 		<?php while (have_posts()) : the_post(); ?>
         
+        
             <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                
                 <h1 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h1>
                 
                 <div class="post-meta">
@@ -40,19 +45,10 @@ if ( !defined('ABSPATH')) exit;
                 </div><!-- end of .post-meta -->
                 
                 <div class="post-entry">
-                    <?php if ( has_post_thumbnail()) : ?>
-                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                    <?php the_post_thumbnail(); ?>
-                        </a>
-                    <?php endif; ?>
-                    <?php the_content(__('Read more &#8250;', 'responsive')); ?>
+                    <?php the_excerpt(); ?>
                     <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
                 </div><!-- end of .post-entry -->
-                
-                <div class="post-data">
-				    <?php the_tags(__('Tagged with:', 'responsive') . ' ', ', ', '<br />'); ?> 
-					<?php printf(__('Posted in %s', 'responsive'), get_the_category_list(', ')); ?> 
-                </div><!-- end of .post-data -->             
+                           
 
             <div class="post-edit"><?php edit_post_link(__('Edit', 'responsive')); ?></div>               
             </div><!-- end of #post-<?php the_ID(); ?> -->
@@ -68,7 +64,7 @@ if ( !defined('ABSPATH')) exit;
 
 	    <?php else : ?>
 
-        <h1 class="title-404"><?php _e('404 &#8212; Fancy meeting you here!', 'responsive'); ?></h1>
+        <h3 class="title-404"><?php printf(__('Your search for %s did not match any entries.', 'responsive' ), get_search_query() ); ?></h3>
                     
         <p><?php _e('Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our options here.', 'responsive'); ?></p>
                     
@@ -81,10 +77,10 @@ if ( !defined('ABSPATH')) exit;
 			 ?></h6>
                     
         <?php get_search_form(); ?>
-        
+
 <?php endif; ?>  
       
-        </div><!-- end of #content -->
+        </div><!-- end of #content-search -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

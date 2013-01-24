@@ -4,28 +4,46 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
- * Index Template
+ * Blog Template
  *
+   Template Name: Blog Excerpt (summary)
  *
- * @file           index.php
+ * @file           blog-excerpt.php
  * @package        Responsive 
- * @author         Emil Uzelac 
+ * @author         Emil Uzelac
  * @copyright      2003 - 2013 ThemeID
  * @license        license.txt
- * @version        Release: 1.0
- * @filesource     wp-content/themes/responsive/index.php
- * @link           http://codex.wordpress.org/Theme_Development#Index_.28index.php.29
+ * @version        Release: 1.1.0
+ * @filesource     wp-content/themes/responsive/blog-excerpt.php
+ * @link           http://codex.wordpress.org/Templates
  * @since          available since Release 1.0
  */
 ?>
 <?php get_header(); ?>
-        <div id="content" class="grid col-620">
+
+        <div id="content-blog" class="grid col-620">
         
+        <?php $options = get_option('responsive_theme_options'); ?>
+		<?php if ($options['breadcrumb'] == 0): ?>
+		<?php echo responsive_breadcrumb_lists(); ?>
+        <?php endif; ?>
+<?php
+    if ( get_query_var('paged') )
+	    $paged = get_query_var('paged');
+	elseif ( get_query_var('page') ) 
+	    $paged = get_query_var('page');
+	else 
+		$paged = 1;
+		query_posts("post_type=post&paged=$paged"); 
+?> 
+
+     
 <?php if (have_posts()) : ?>
 
 		<?php while (have_posts()) : the_post(); ?>
         
             <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                
                 <h1 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h1>
                 
                 <div class="post-meta">
@@ -45,7 +63,7 @@ if ( !defined('ABSPATH')) exit;
                     <?php the_post_thumbnail(); ?>
                         </a>
                     <?php endif; ?>
-                    <?php the_content(__('Read more &#8250;', 'responsive')); ?>
+                    <?php the_excerpt(); ?>
                     <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
                 </div><!-- end of .post-entry -->
                 
@@ -84,7 +102,7 @@ if ( !defined('ABSPATH')) exit;
         
 <?php endif; ?>  
       
-        </div><!-- end of #content -->
+        </div><!-- end of #content-blog -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

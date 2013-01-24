@@ -1,13 +1,21 @@
 /* 
 Theme Name: epachina 
-Theme URI: http://hanxianlong.tk
-Description: designed by hanxianlong, for epachina
+Theme URI: http://hanxianlong.tk 
+Description: epachina theme special for epachina.org
 
-Version: 1.0.0
+Version: 1.0.1
 Author: hanxianlong 
 Author URI: http://hanxianlong.tk
-Tags: EPA, company
-  -------------------------------------------------------------- */
+Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready, flexible-width, rtl-language-support
+
+License: GNU General Public License v3 or later
+License URI: license.txt 
+
+for epachina.org only.
+--------------------------------------------------------------
+	
+CSS Rules: Sorted alphabetically for better organization.
+-------------------------------------------------------------- */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
@@ -1201,8 +1209,8 @@ form div {
 -------------------------------------------------------------- */
 #container {
 	margin: 0 auto;
-	max-width: 960px;
-	padding: 0px 25px;
+	max-width: 100%;
+	width:100%;
 }
 
 #wrapper {
@@ -1215,6 +1223,7 @@ form div {
 	margin: 20px auto 20px auto;
 	padding: 0 20px 20px 20px;
 	position: relative;
+	width:960px;
 }
 
 .home #wrapper {
@@ -1242,9 +1251,10 @@ form div {
 
 /* =Header
 -------------------------------------------------------------- */
-#logo {
-	float: left;
-	margin: 0;
+#top-container
+{
+    margin:0 auto 0px auto;
+    width:1000px;
 }
 
 .site-name {
@@ -1587,7 +1597,8 @@ form div {
 .top-widget #searchform {
     margin: 0;
 }
-
+.top-search{float:right}
+.top-search .field { width:200px; }
 /* =Titles
 -------------------------------------------------------------- */
 .featured-title {
@@ -1641,10 +1652,11 @@ form div {
 -------------------------------------------------------------- */
 .top-menu {
 	float: right;
-	margin: 10px 0;
+	 margin:0px;
     padding: 0;
+    padding-top:5px;
 }
-
+.top-menu ul{margin:0px; padding:0px;}
 .top-menu li {
 	display: inline;
 	list-style-type: none;
@@ -1664,30 +1676,32 @@ form div {
 .top-menu li a:hover {
 	color: #333;
 }
-
+ 
 /* =Header Menu (Primary)
 -------------------------------------------------------------- */
+.menu-container
+{
+    background: #005284;
+    zoom: 1;
+    border-top: 4px solid #E9E9E9;
+    border-bottom: 2px solid #3F99D0;
+    clear:both;
+    overflow:visible;
+}
 .menu {
-	background-color: #585858;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#585858), to(#3d3d3d));
-	background-image: -webkit-linear-gradient(top, #585858, #3d3d3d);
-	background-image: -moz-linear-gradient(top, #585858, #3d3d3d);
-	background-image: -ms-linear-gradient(top, #585858, #3d3d3d);
-	background-image: -o-linear-gradient(top, #585858, #3d3d3d);
-	background-image: linear-gradient(top, #585858, #3d3d3d);
 	clear: both;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#585858, endColorstr=#3d3d3d);
 	margin: 0 auto;
+	width:1000px;
 }
 
 .menu, 
 .menu ul {
 	display: block;
 	list-style-type: none;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 }
-
+ 
 .menu li {
 	border: 0;
 	display: block;
@@ -1748,7 +1762,7 @@ form div {
 
 .menu ul li a:hover, 
 .menu li li a:hover {
-	color: #484848;
+	color: #0081D0;
 	text-decoration: none;
 }
 
@@ -1759,7 +1773,8 @@ form div {
 }
 
 .menu a {
-	border-left: 1px solid #585858;
+	border-left: 1px solid #084573;
+	border-right:1px solid #215d8c;
 	color: #fff;
     cursor: pointer;
 	display: block;
@@ -1775,20 +1790,22 @@ form div {
 }
 
 .menu a:hover {
-	background-color: #808080;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#808080), to(#363636));
-	background-image: -webkit-linear-gradient(top, #808080, #363636);
-	background-image: -moz-linear-gradient(top, #808080, #363636);
-	background-image: -ms-linear-gradient(top, #808080, #363636);
-	background-image: -o-linear-gradient(top, #808080, #363636);
-	background-image: linear-gradient(top, #808080, #363636);
+	background-color: #0081d0;
+	/*background-image: -webkit-gradient(linear, left top, left bottom, from(#0081D0), to(#363636));
+	background-image: -webkit-linear-gradient(top, #0081D0, #363636);
+	background-image: -moz-linear-gradient(top, #0081D0, #363636);
+	background-image: -ms-linear-gradient(top, #0081D0, #363636);
+	background-image: -o-linear-gradient(top, #0081D0, #363636);
+	background-image: linear-gradient(top,#0081D0, #363636);*/
+	border:1px solid #0081d0;
+	border-top:0px;border-bottom:0px;
 	color: #fff;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#808080, endColorstr=#363636);
+   /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0081D0, endColorstr=#363636);*/
 }
 
 .menu .current_page_item a,
 .menu .current-menu-item a {
-	background-color: #343434;
+	background-color: #0081d0;
 }
 
 .home .menu .current_page_item a {
