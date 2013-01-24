@@ -439,7 +439,7 @@ input[type='password'] {
 .ie7 area,
 .ie7 select,
 .ie7 textarea,
-.ie7 input[type="text"], 
+/*.ie7 input[type="text"], */
 .ie7 input[type="password"] {
     width: 96%;
 }
@@ -1013,7 +1013,7 @@ a.black:hover {
 	color: #212121;
 	display: block;
 	margin: 0 auto;
-	max-width: 960px;
+	max-width: 980px;
 	padding: 10px;
 	position: absolute;
 	top: 60px;
@@ -1234,19 +1234,19 @@ form div {
 }
 
 #header {
-	margin: 0;
+	margin: 0;position:relative;
 }
 
 #footer {
 	clear: both;
-	margin: 0 auto;
-	max-width: 960px;
-	padding: 0 25px 0 25px;
+	max-width: 100%;
+        height:135px;
+        background: url(images/footer-bg.jpg) repeat-x;width:100%;
 }
 
 #footer-wrapper {
-	margin: 0;
-	padding: 0;
+	margin: 0 auto;padding:0;
+	padding-top: 40px; width:960px;
 }
 
 /* =Header
@@ -1254,7 +1254,8 @@ form div {
 #top-container
 {
     margin:0 auto 0px auto;
-    width:1000px;
+    padding-top:5px;
+    width:960px;  position:relative;
 }
 
 .site-name {
@@ -1597,8 +1598,8 @@ form div {
 .top-widget #searchform {
     margin: 0;
 }
-.top-search{float:right}
-.top-search .field { width:200px; }
+.top-search{position:absolute; top:50px; right:0px;}
+.top-search .field { width:400px; }
 .top-search form{margin:0px;bottom:0px;}
 /* =Titles
 -------------------------------------------------------------- */
@@ -1652,10 +1653,9 @@ form div {
 /* =Top Menu
 -------------------------------------------------------------- */
 .top-menu {
-	float: right;
-	 margin:0px;
-    padding: 0;
-    padding-top:5px;
+    float: right;
+    margin:0px;
+    padding: 0; position:absolute; top:5px; right:0px;
 }
 .top-menu ul{margin:0px; padding:0px;}
 .top-menu li {
@@ -1666,7 +1666,7 @@ form div {
 .top-menu li a {
 	border-left: 1px solid #ccc;
 	color: #333;
-	font-size: 11px;
+	font-size: 12px;
 	padding: 0 4px 0 8px;
 }
 
@@ -1675,7 +1675,7 @@ form div {
 }
 
 .top-menu li a:hover {
-	color: #333;
+	color: #333; text-decoration:underline;
 }
  
 /* =Header Menu (Primary)
@@ -1692,7 +1692,7 @@ form div {
 .menu {
 	clear: both;
 	margin: 0 auto;
-	width:1000px;
+	width:980px;
 }
 
 .menu, 
@@ -2190,7 +2190,7 @@ form div {
 
 .footer-menu li a {
 	border-left: 1px solid #ccc;
-	color: #333;
+	color: #fff;
 	padding: 0 8px;
 }
 
@@ -2587,17 +2587,17 @@ table.cart td.actions .coupon .input-text {
 /* =Footer
 -------------------------------------------------------------- */
 #footer {
-	font-size: 11px;
-	line-height: 1.5em;
+	font-size: 12px;
+	line-height: 1.5em; color:#fff;
 }
 
 #footer a {
-	color: #333;
+	color: #fff;
 	font-weight: 400;
 }
 
 #footer a:hover {
-    color: #444;
+    text-decoration:underline;
 }
 
 #footer-wrapper .grid.col-940 {
@@ -2811,7 +2811,6 @@ BDO[DIR="rtl"] {
 	.top-menu, 
 	.footer-menu li {
 	    float: none;
-        font-size: 11px;
 	    text-align: center;
     }
 	

@@ -24,7 +24,6 @@ if ( !defined('ABSPATH')) exit;
 <?php responsive_container_end(); // after container hook ?>
 
 <div id="footer" class="clearfix">
-
     <div id="footer-wrapper">
     
         <div class="grid col-940">
@@ -43,11 +42,9 @@ if ( !defined('ABSPATH')) exit;
          
          <div class="grid col-380 fit">
          <?php $options = get_option('responsive_theme_options');
-					
             // First let's check if any of this was set
 		
                 echo '<ul class="social-icons">';
-					
                 if (!empty($options['twitter_uid'])) echo '<li class="twitter-icon"><a href="' . $options['twitter_uid'] . '">'
                     .'<img src="' . get_stylesheet_directory_uri() . '/icons/twitter-icon.png" width="24" height="24" alt="Twitter">'
                     .'</a></li>';
@@ -112,14 +109,11 @@ if ( !defined('ABSPATH')) exit;
         <div class="grid col-300 scroll-top"><a href="#scroll-top" title="<?php esc_attr_e( 'scroll to top', 'responsive' ); ?>"><?php _e( '&uarr;', 'responsive' ); ?></a></div>
         
         <div class="grid col-300 fit powered">
-            <a href="<?php echo esc_url(__('http://themeid.com/responsive-theme/','responsive')); ?>" title="<?php esc_attr_e('Responsive Theme', 'responsive'); ?>">
-                    <?php printf('Responsive Theme'); ?></a>
-            <?php esc_attr_e('powered by', 'responsive'); ?> <a href="<?php echo esc_url(__('http://wordpress.org/','responsive')); ?>" title="<?php esc_attr_e('WordPress', 'responsive'); ?>">
-                    <?php printf('WordPress'); ?></a>
+           备案号:京20451134号
         </div><!-- end .powered -->
         
     </div><!-- end #footer-wrapper -->
-    
+
 </div><!-- end #footer -->
 
 <?php wp_footer(); ?>
