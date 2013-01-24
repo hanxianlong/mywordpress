@@ -1599,6 +1599,7 @@ form div {
 }
 .top-search{float:right}
 .top-search .field { width:200px; }
+.top-search form{margin:0px;bottom:0px;}
 /* =Titles
 -------------------------------------------------------------- */
 .featured-title {

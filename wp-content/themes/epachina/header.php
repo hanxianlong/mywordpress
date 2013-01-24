@@ -61,17 +61,8 @@ if ( !defined('ABSPATH')) exit;
 		</div><?php //end of top menu ?>
 
     <?php responsive_in_header(); // header hook ?>
-   	<?php if ( get_header_image() != '' ) : ?>
-            <a href="<?php echo home_url('/'); ?>"><img src="<?php header_image(); ?>" width="<?php if(function_exists('get_custom_header')) { echo get_custom_header() -> width;} else { echo HEADER_IMAGE_WIDTH;} ?>" height="<?php if(function_exists('get_custom_header')) { echo get_custom_header() -> height;} else { echo HEADER_IMAGE_HEIGHT;} ?>" alt="<?php bloginfo('name'); ?>" /></a>
-    <?php endif; // header image was removed ?>
-
-    <?php if ( !get_header_image() ) : ?>
-            <span class="site-name"><a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></span>
-            <span class="site-description"><?php bloginfo('description'); ?></span>
-
-    <?php endif; // header image was removed (again) ?>
-	
-        </div><!-- end of #logo -->  
+            <a href="<?php echo home_url('/'); ?>"><img src="<?php header_image(); ?>" width="117px" height="74px" alt="<?php bloginfo('name'); ?>" /></a>
+        </div><!-- end of #logo container -->  
     
     <?php get_sidebar('top'); ?>
 			    <div class="menu-container">
