@@ -91,7 +91,7 @@ html {
 body {
 	-moz-font-smoothing: antialiased;
 	-webkit-font-smoothing: antialiased;
-	background: #efefef;
+	/*background: #efefef;*/
 	color: #555;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
@@ -1254,7 +1254,7 @@ form div {
 #top-container
 {
     margin:0 auto 0px auto;
-    padding-top:5px;
+    padding-top:5px; overflow:auto; margin-bottom:5px;
     width:960px;  position:relative;
 }
 
@@ -1598,7 +1598,7 @@ form div {
 .top-widget #searchform {
     margin: 0;
 }
-.top-search{position:absolute; top:50px; right:0px;}
+.top-search{position:absolute; top:45px; right:0px;}
 .top-search .field { width:400px; }
 .top-search form{margin:0px;bottom:0px;}
 /* =Titles
@@ -1655,7 +1655,7 @@ form div {
 .top-menu {
     float: right;
     margin:0px;
-    padding: 0; position:absolute; top:5px; right:0px;
+    padding: 0; top:5px; right:0px;
 }
 .top-menu ul{margin:0px; padding:0px;}
 .top-menu li {

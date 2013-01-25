@@ -44,9 +44,6 @@ if ( !defined('ABSPATH')) exit;
     <?php responsive_header(); // before header hook ?>
     <div id="header">
         <div id="top-container">
-            <div style="float:left">
-                        <a  href="<?php echo home_url('/'); ?>"><img src="<?php header_image(); ?>" width="117px" height="74px" alt="<?php bloginfo('name'); ?>" /></a>
-            </div>
 		<div class="top-menu">
 			<?php if (has_nav_menu('top-menu', 'responsive')) { ?>
 				<?php wp_nav_menu(array(
@@ -58,13 +55,13 @@ if ( !defined('ABSPATH')) exit;
 						); 
 					?>
 			<?php } ?>
-                    </div><!--# end of top menu-->
 			<div class="top-search">
 				 <?php get_search_form(); ?>
 			</div>
-		
+		</div><?php //end of top menu ?>
 
     <?php responsive_in_header(); // header hook ?>
+            <a href="<?php echo home_url('/'); ?>"><img src="<?php header_image(); ?>" width="117px" height="74px" alt="<?php bloginfo('name'); ?>" /></a>
         </div><!-- end of #logo container -->  
     
     <?php get_sidebar('top'); ?>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // Exit if accessed directly
 if ( !defined('ABSPATH')) exit;
@@ -109,7 +109,7 @@ if ( !defined('ABSPATH')) exit;
         <div class="grid col-300 scroll-top"><a href="#scroll-top" title="<?php esc_attr_e( 'scroll to top', 'responsive' ); ?>"><?php _e( '&uarr;', 'responsive' ); ?></a></div>
         
         <div class="grid col-300 fit powered">
-           备案号:京20451134号
+           备案号：京1333456
         </div><!-- end .powered -->
         
     </div><!-- end #footer-wrapper -->
