@@ -22,7 +22,6 @@ if ( !defined('ABSPATH')) exit;
  */
 ?>
 <?php get_header(); ?>
-
         <div id="featured" class="grid col-940">
         
         <div class="grid col-460">

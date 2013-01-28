@@ -20,7 +20,6 @@ if ( !defined('ABSPATH')) exit;
 ?>
 <?php get_header(); ?>
         <div id="content" class="grid col-620">
-        
 <?php if (have_posts()) : ?>
 
 		<?php while (have_posts()) : the_post(); ?>

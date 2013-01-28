@@ -23,7 +23,6 @@ if ( !defined('ABSPATH')) exit;
         <div id="content-archive" class="grid col-620">
 
 <?php if (have_posts()) : ?>
-        
         <?php $options = get_option('responsive_theme_options'); ?>
 		<?php if ($options['breadcrumb'] == 0): ?>
 		<?php echo responsive_breadcrumb_lists(); ?>
@@ -37,7 +36,7 @@ if ( !defined('ABSPATH')) exit;
 				<?php elseif ( is_year() ) : ?>
 					<?php printf( __( 'Yearly Archives: %s', 'responsive' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
 				<?php else : ?>
-					<?php _e( 'Blog Archives', 'responsive' ); ?>
+					<?php //_e( 'Blog Archives', 'responsive' ); ?>
 				<?php endif; ?>
 			</h6>
                     
@@ -47,6 +46,8 @@ if ( !defined('ABSPATH')) exit;
                 <h1 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__( 'Permanent Link to %s', 'responsive' ), the_title_attribute( 'echo=0' )); ?>"><?php the_title(); ?></a></h1>
                 
                 <div class="post-meta">
+				    <?php the_tags(__('Tagged with:', 'responsive') . ' ', ', ', '<br />'); ?> 
+					<?php printf(__('Posted in %s', 'responsive'), get_the_category_list(', ')); ?>
                 <?php responsive_post_meta_data(); ?>
                 
 				    <?php if ( comments_open() ) : ?>
@@ -60,23 +61,17 @@ if ( !defined('ABSPATH')) exit;
                 <div class="post-entry">
                     <?php if ( has_post_thumbnail()) : ?>
                         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                    <?php the_post_thumbnail('thumbnail', array('class' => 'alignleft')); ?>
+							<?php the_post_thumbnail('thumbnail', array('class' => 'alignleft')); ?>
                         </a>
                     <?php endif; ?>
                     <?php the_excerpt(); ?>
                     <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
                 </div><!-- end of .post-entry -->
-                
-                <div class="post-data">
-				    <?php the_tags(__('Tagged with:', 'responsive') . ' ', ', ', '<br />'); ?> 
-					<?php printf(__('Posted in %s', 'responsive'), get_the_category_list(', ')); ?>
-                </div><!-- end of .post-data -->             
 
             <div class="post-edit"><?php edit_post_link(__('Edit', 'responsive')); ?></div>             
             </div><!-- end of #post-<?php the_ID(); ?> -->
             
             <?php comments_template( '', true ); ?>
-            
         <?php endwhile; ?> 
         
         <?php if (  $wp_query->max_num_pages > 1 ) : ?>

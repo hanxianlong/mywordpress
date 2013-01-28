@@ -1030,7 +1030,7 @@ a.black:hover {
 th, 
 td,
 table {
-	border: 1px solid #ddd;
+	border: 0px;
 }
 
 table {
@@ -1120,6 +1120,8 @@ h6 {
     margin-top: 1.285em;
 }
 
+h2.heading{font-weight: normal;font-size: 18px;text-align: center;background: url(images/dot.jpg) center center repeat-x; margin:0 auto;}
+h2.heading span{ background-color:#fff; padding:0 20px; font-family:YaHei Consolas Hybrid, SimSun-ExtB}
 /* =Margins & Paddings
 -------------------------------------------------------------- */
 p, 
@@ -2211,8 +2213,9 @@ form div {
 	font-size: 13px;
 	height: 28px;
 	line-height: 28px;
-	margin: 20px 0;
+	margin: 0 auto;
 	padding: 0 5px;
+	width:120px;
 }
 
 .navigation a {
@@ -2256,7 +2259,7 @@ form div {
 -------------------------------------------------------------- */
 .breadcrumb-list {
 	font-size: 12px;
-	padding: 40px 0 0 0;
+	padding: 20px 0 0 0;
 }
 
 /* =Comments
@@ -2983,4 +2986,10 @@ BDO[DIR="rtl"] {
     }
 }
 
+/**/
+.video-item{float:left; width:220px; height:200px; margin-top:20px; margin-left:15px; }
+.video-item a{ font-size:12px}
 /*The last 29 days of the month are the hardest."- Nikola Tesla*/
+/**/
+.category-blogs{ border-bottom:1px dotted gray;}
+.post-title{font-size:15px;}

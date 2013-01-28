@@ -138,4 +138,58 @@ function responsive_woocommerce_wrapper_end() {
   echo '</div><!-- end of #content-woocommerce -->';
 }
 
+
+
+
+function cp_widget_form_extend( $instance, $widget ) {
+	if ( !isset($instance['classes']) )
+		$instance['classes'] = null;
+	/**
+	  * 定义class前缀和class名称
+	  */
+	$class_prefix = 'widget-';
+	$myclass = array(
+		'default' => __('Default', 'textdomain'),
+		'blue' => __('Blue', 'textdomain'),
+		'yellow' => __('Yellow', 'textdomain'),
+		'black' => __('Black', 'textdomain')
+		);
+	$row = "<p>\n";
+	/* 产生输入ID的input元素 */
+	$row .= "\t<label for='widget-{$widget->id_base}-{$widget->number}-custom_id'>" . __('Custom ID <small>(separate with spaces)</small><br /><em>Set custom IDs for widget</em>', 'textdomain'). "</label>\n";
+	$row .= "\t<input type='text' name='widget-{$widget->id_base}[{$widget->number}][custom_id]' id='widget-{$widget->id_base}-{$widget->number}-custom_id' class='widefat' value='{$instance['custom_id']}' />\n";
+	/* 产生选择class的下拉菜单 */
+	$row .= "\t<label for='widget-{$widget->id_base}-{$widget->number}-classes'>" . __('Additional Classes<br /><em>Select a color for the background of widget title</em>', 'textdomain'). "</label>\n";
+	$row .= "\t<select name='widget-{$widget->id_base}[{$widget->number}][classes]' id='widget-{$widget->id_base}-{$widget->number}-classes' class='widefat'>";
+	foreach( $myclass as $key => $class ) {
+		$selected = null;
+		if( $class_prefix.$key == $instance['classes'] ) $selected = 'selected = "selected"';
+		$row .= "\t<option value='$class_prefix$key' $selected>$class</value>\n";
+	}
+	$row .= "</select>\n";
+	echo $row;
+	return $instance;
+}
+/* 更新用户输入的选项 */
+function cp_widget_update( $instance, $new_instance ) {
+	$instance['classes'] = $new_instance['classes'];
+	$instance['custom_id'] = $new_instance['custom_id'];
+	return $instance;
+}
+/* 将用户自定义class和id添加到widget的wrapper上 */
+function cp_dynamic_sidebar_params( $params ) {
+	global $wp_registered_widgets;
+	$widget_id  = $params[0]['widget_id'];
+	$widget_obj = $wp_registered_widgets[$widget_id];
+	$widget_opt = get_option($widget_obj['callback'][0]->option_name);
+	$widget_num = $widget_obj['params'][0]['number'];
+	if ( isset($widget_opt[$widget_num]['classes']) && !empty($widget_opt[$widget_num]['classes']) )
+		$params[0]['before_widget'] = preg_replace( '/class="/', "class=\"{$widget_opt[$widget_num]['classes']} ", $params[0]['before_widget'], 1 );
+	if ( isset($widget_opt[$widget_num]['custom_id']) && !empty($widget_opt[$widget_num]['custom_id']) )
+		$params[0]['before_widget'] = preg_replace( '/id=".*?"/', "id=\"{$widget_opt[$widget_num]['custom_id']}\"", $params[0]['before_widget'], 1 );
+	return $params;
+}
+//add_filter('widget_form_callback', 'cp_widget_form_extend', 10, 2);
+//add_filter( 'widget_update_callback', 'cp_widget_update', 10, 2 );
+//add_filter( 'dynamic_sidebar_params', 'cp_dynamic_sidebar_params' );
 ?>
