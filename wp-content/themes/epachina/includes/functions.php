@@ -287,7 +287,7 @@ add_filter('excerpt_length', 'responsive_excerpt_length');
  * Returns a "Read more" link for excerpts
  */
 function responsive_read_more() {
-    return '<div class="read-more"><a href="' . get_permalink() . '">' . __('Read more &#8250;', 'responsive') . '</a></div><!-- end of .read-more -->';
+    return '<a href="' . get_permalink() . '"> '.__('Read more &#8250;', 'responsive').'</a><!-- end of .read-more -->';
 }
 
 /**
@@ -339,19 +339,13 @@ add_action( 'widgets_init', 'responsive_remove_recent_comments_style' );
 if (!function_exists('responsive_post_meta_data')) :
 
 function responsive_post_meta_data() {
-	printf( __( '<span class="%1$s">Posted on </span>%2$s<span class="%3$s"> by </span>%4$s', 'responsive' ),
+        printf( __( '<span class="%1$s">Posted on </span>%2$s', 'responsive' ),
 	'meta-prep meta-prep-author posted', 
 	sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="timestamp">%3$s</span></a>',
 		get_permalink(),
 		esc_attr( get_the_time() ),
 		get_the_date()
-	),
-	'byline',
-	sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-		get_author_posts_url( get_the_author_meta( 'ID' ) ),
-		sprintf( esc_attr__( 'View all posts by %s', 'responsive' ), get_the_author() ),
-		get_the_author()
-	    )
+	)
 	);
 }
 endif;
@@ -403,9 +397,7 @@ if (!function_exists('responsive_breadcrumb_lists')) :
             $parentCat = get_category($thisCat->parent);
       
 	  if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' ' . $chevron . ' '));
-      
-	      echo $before; printf( __( 'Archive for %s', 'responsive' ), single_cat_title('', false) ); $after;
- 
+	      echo $before; printf( __( ' %s', 'responsive' ), single_cat_title('', false) ); $after;
       } elseif ( is_day() ) {
       
 	      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $chevron . ' ';

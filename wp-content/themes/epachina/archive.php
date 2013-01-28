@@ -43,14 +43,14 @@ if ( !defined('ABSPATH')) exit;
         <?php while (have_posts()) : the_post(); ?>
         
             <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <h1 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__( 'Permanent Link to %s', 'responsive' ), the_title_attribute( 'echo=0' )); ?>"><?php the_title(); ?></a></h1>
+                <h1 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php  the_title_attribute();?>"><?php the_title(); ?></a></h1>
                 
                 <div class="post-meta">
-				    <?php the_tags(__('Tagged with:', 'responsive') . ' ', ', ', '<br />'); ?> 
-					<?php printf(__('Posted in %s', 'responsive'), get_the_category_list(', ')); ?>
-                <?php responsive_post_meta_data(); ?>
+                    <?php printf(__('Posted in %s', 'responsive'), get_the_category_list(', ')); ?>
+                    <?php the_tags(__('Tagged with:', 'responsive') . ' ', ', ', '<br />'); ?> 
+                    <?php responsive_post_meta_data(); ?>
                 
-				    <?php if ( comments_open() ) : ?>
+		<?php if ( comments_open() ) : ?>
                         <span class="comments-link">
                         <span class="mdash">&mdash;</span>
                     <?php comments_popup_link(__('No Comments &darr;', 'responsive'), __('1 Comment &darr;', 'responsive'), __('% Comments &darr;', 'responsive')); ?>
