@@ -671,15 +671,6 @@ endif;
             'before_widget' => '<div id="%1$s" class="%2$s">',
             'after_widget' => '</div>'
         ));
-    register_sidebar(array(
-    	'name' => __('sidebar-video', 'responsive'),
-    	'description' => __('Area 12 - sidebar-video.php', 'responsive'),
-    	'id' => 'sidebar-video',
-    	'before_title' => '<div class="widget-title">',
-    	'after_title' => '</div>',
-    	'before_widget' => '<div id="%1$s" class="%2$s">',
-    	'after_widget' => '</div>'
-    	));
     }
 	
     add_action('widgets_init', 'responsive_widgets_init');

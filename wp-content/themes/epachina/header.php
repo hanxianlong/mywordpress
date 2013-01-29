@@ -61,7 +61,7 @@ if ( !defined('ABSPATH')) exit;
 		</div><?php //end of top menu ?>
 
     <?php responsive_in_header(); // header hook ?>
-            <a href="<?php echo home_url('/'); ?>"><img src="<?php header_image(); ?>" width="117px" height="74px" alt="<?php bloginfo('name'); ?>" /></a>
+            <a href="<?php echo home_url('/'); ?>"><img src="<?php header_image(); ?>" height="74px" alt="<?php bloginfo('name'); ?>" /></a>
         </div><!-- end of #logo container -->  
     
     <?php get_sidebar('top'); ?>
