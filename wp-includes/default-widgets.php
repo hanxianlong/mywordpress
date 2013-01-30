@@ -544,9 +544,11 @@ class WP_Widget_SubCategories extends WP_Widget {
 		$h = ! empty( $instance['hierarchical'] ) ? '1' : '0';
 		$s = ! empty( $instance['showTitle'] ) ? '1' : '0';
 		$e = ! empty( $instance['excludeId'] ) ? $instance['excludeId'] : '-1';
-		$i =get_the_category();// get_category_root_id(get_the_category());
-		$x= implode(',' $i);
-		echo $x;
+		$categories =get_the_category();
+		$cates = array();
+		foreach($categories as $cate){
+			$cates[] = $cate->term_id;
+		}
 
 		echo $before_widget;
 
@@ -555,7 +557,7 @@ class WP_Widget_SubCategories extends WP_Widget {
 				echo $before_title . $title . $after_title;
 		}
 
-		$cat_args = array('orderby' => 'name', 'show_count' => $c, 'hierarchical' => $h,'exclude'=>$e,'include'=>$i);
+		$cat_args = array('orderby' => 'name', 'show_count' => $c, 'hierarchical' => $h,'exclude'=>$e,'include'=>$cates);
 ?>
 		<ul>
 <?php

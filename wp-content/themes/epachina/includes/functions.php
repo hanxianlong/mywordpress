@@ -530,32 +530,6 @@ endif;
 
     add_action( 'wp_enqueue_scripts', 'responsive_enqueue_comment_reply' );
 
-    /**
-     * Theme Options Support and Information
-     */	
-    function responsive_theme_support () {
-    ?>
-    
-    <div id="info-box-wrapper" class="grid col-940">
-        <div class="info-box notice">
-            <a class="blue button" href="<?php echo esc_url(__('http://themeid.com/support/','responsive')); ?>" title="<?php esc_attr_e('Theme Support', 'responsive'); ?>" target="_blank">
-            <?php printf(__('Theme Support','responsive')); ?></a>
-            
-            <a class="gray button" href="<?php echo esc_url(__('http://themeid.com/themes/','responsive')); ?>" title="<?php esc_attr_e('More Themes', 'responsive'); ?>" target="_blank">
-            <?php printf(__('More Themes','responsive')); ?></a>
-            
-            <a class="gray button" href="<?php echo esc_url(__('http://themeid.com/showcase/','responsive')); ?>" title="<?php esc_attr_e('Showcase', 'responsive'); ?>" target="_blank">
-            <?php printf(__('Showcase','responsive')); ?></a>
-            
-            <a class="gold button" href="<?php echo esc_url(__('http://themeid.com/donate/','responsive')); ?>" title="<?php esc_attr_e('Donate Now', 'responsive'); ?>" target="_blank">
-            <?php printf(__('Donate Now','responsive')); ?></a>
-        </div>
-    </div>
-
-    <?php }
- 
-    add_action('responsive_theme_options','responsive_theme_support');
-
 	 
     /**
      * WordPress Widgets start right here.

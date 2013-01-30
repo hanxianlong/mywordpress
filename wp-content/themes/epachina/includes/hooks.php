@@ -138,9 +138,6 @@ function responsive_woocommerce_wrapper_end() {
   echo '</div><!-- end of #content-woocommerce -->';
 }
 
-
-
-
 function cp_widget_form_extend( $instance, $widget ) {
 	if ( !isset($instance['classes']) )
 		$instance['classes'] = null;
@@ -189,7 +186,4 @@ function cp_dynamic_sidebar_params( $params ) {
 		$params[0]['before_widget'] = preg_replace( '/id=".*?"/', "id=\"{$widget_opt[$widget_num]['custom_id']}\"", $params[0]['before_widget'], 1 );
 	return $params;
 }
-//add_filter('widget_form_callback', 'cp_widget_form_extend', 10, 2);
-//add_filter( 'widget_update_callback', 'cp_widget_update', 10, 2 );
-//add_filter( 'dynamic_sidebar_params', 'cp_dynamic_sidebar_params' );
 ?>

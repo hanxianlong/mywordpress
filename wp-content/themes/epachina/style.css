@@ -1366,32 +1366,40 @@ form div {
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	background-color: #fff;
-	border: 1px solid #e5e5e5;
+	border: 0px solid #e5e5e5;
 	border-radius: 4px;
-	padding-bottom: 40px;
 	width: 99.893617021277%;
 }
-
+#featured div{ float:left; position:relative; overflow:hidden; cursor:pointer;}
+#featured .left
+{-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;border-radius: 7px;
+     border:7px solid #ccc; width:282px; height:248px; position:relative;}
+#featured .middle{width:315px; position:relative;}
+#featured .right{width:315px; position:relative;}
+#featured .half-height { height:125px; width:100%;}
+#featured .half-width { height:125px; width:50%;}
+#featured .bottom-margin{ margin-bottom:10px;}
+#featured .right-margin{ margin-right:10px;}
+#featured img{height:100%; width:100%;}
+#featured img:hover
+{ opacity:0.8;
+	filter: alpha(opacity=80); 
+    }
 #featured p {
-	font-size: 18px;
-	font-weight: 200;
+    color:#fff; font-size:12px; 
+	text-align: center;position:absolute; bottom:0px; left:0px;
+    width:100%;
+    opacity:0.35;
+	filter: alpha(opacity=35); margin:0px;
+    background-color:#000; 
 	line-height: 27px;
-	padding: 0 40px 0 40px;
-	text-align: center;
 }
 
-#featured-image {
-	margin: 40px 0 0 0;
+#featured p:hover {
+    opacity:0.75;
+	filter: alpha(opacity=75);
 }
-
-#featured-image .fluid-width-video-wrapper {
-	margin-left: -20px;
-}
-
-.featured-image img {
-	margin-top: 44px;
-}
-
 /* =Post
 -------------------------------------------------------------- */
 .comments-link {
@@ -1605,18 +1613,7 @@ form div {
 .top-search form{margin:0px;bottom:0px;}
 /* =Titles
 -------------------------------------------------------------- */
-.featured-title {
-	font-size:  60px;
-	letter-spacing: -1px;
-	margin: 0;
-	padding-top: 40px;
-	text-align: center;
-}
-
-.featured-subtitle {
-	padding: 0 10px;
-	text-align: center;
-}
+  
 
 .widget-title, 
 .widget-title-home h3 {
@@ -2750,11 +2747,7 @@ BDO[DIR="rtl"] {
 	.grid-right {
 	    float: none;
     }
-	
-	#featured-image .fluid-width-video-wrapper {
-	    margin: 20px 0 0 0;
-    }
-	
+  
 	.home #widgets {
 		margin-top: 40px;
 	}
@@ -2788,11 +2781,7 @@ BDO[DIR="rtl"] {
 	.grid-right {
 	    float: none;
     }
-
-	#featured-image .fluid-width-video-wrapper {
-	    margin: 20px 0 0 0;
-    }
-    
+ 
     .top-widget {
         float: none;
         margin: 0 auto 10px auto;
@@ -2859,19 +2848,9 @@ BDO[DIR="rtl"] {
 	.grid-right {
 	    float: none;
     }
+ 
 	
-	#featured-image .fluid-width-video-wrapper {
-	    margin: 20px 0 0 0;
-	}
-	
-	.featured-title {
-	    font-size: 40px;
-	    padding: 40px 20px 0 20px
-    }
-    
-    .featured-subtitle {
-        font-size: 24px;
-    }
+  
     
     .navigation .next,
     .navigation .previous {
@@ -2911,23 +2890,7 @@ BDO[DIR="rtl"] {
     
     body {}
 	
-	#featured p {
-	    font-size: 12px;
-		line-height: 1.5em;
-    }
-
-    .featured-title {
-	    font-size: 35px;
-    }
-	
-	.featured-subtitle {
-		font-size: 15px;
-	}
-
-    .call-to-action a.button {
-	    font-size: 14px;
-	    padding: 7px 17px;
-    }
+ 
 
     .hide-320 {
         display: none;
@@ -2942,23 +2905,7 @@ BDO[DIR="rtl"] {
     
     body {}
 	
-	#featured p {
-	    font-size: 11px;
-		line-height: 1.5em;
-    }
-
-    .featured-title {
-	    font-size: 20px;
-    }
-	
-	.featured-subtitle {
-		font-size: 11px;
-	}
-
-    .call-to-action a.button {
-	    font-size: 12px;
-	    padding: 5px 15px;
-    }
+ 
     
     .top-widget area,
     .top-widget select,
