@@ -1605,9 +1605,10 @@ function feed_links( $args = array() ) {
 	);
 
 	$args = wp_parse_args( $args, $defaults );
-
-	echo '<link rel="alternate" type="' . feed_content_type() . '" title="' . esc_attr(sprintf( $args['feedtitle'], get_bloginfo('name'), $args['separator'] )) . '" href="' . get_feed_link() . "\" />\n";
-	echo '<link rel="alternate" type="' . feed_content_type() . '" title="' . esc_attr(sprintf( $args['comstitle'], get_bloginfo('name'), $args['separator'] )) . '" href="' . get_feed_link( 'comments_' . get_default_feed() ) . "\" />\n";
+        
+        //commented by hanxianlong, don't output alternate header meta
+	//echo '<link rel="alternate" type="' . feed_content_type() . '" title="' . esc_attr(sprintf( $args['feedtitle'], get_bloginfo('name'), $args['separator'] )) . '" href="' . get_feed_link() . "\" />\n";
+	//echo '<link rel="alternate" type="' . feed_content_type() . '" title="' . esc_attr(sprintf( $args['comstitle'], get_bloginfo('name'), $args['separator'] )) . '" href="' . get_feed_link( 'comments_' . get_default_feed() ) . "\" />\n";
 }
 
 /**
@@ -1668,8 +1669,9 @@ function feed_links_extra( $args = array() ) {
 		$href = get_post_type_archive_feed_link( get_queried_object()->name );
 	}
 
-	if ( isset($title) && isset($href) )
-		echo '<link rel="alternate" type="' . feed_content_type() . '" title="' . esc_attr( $title ) . '" href="' . esc_url( $href ) . '" />' . "\n";
+        //commented by hanxianlong, don't output alternate header meta
+	//if ( isset($title) && isset($href) )
+	//	echo '<link rel="alternate" type="' . feed_content_type() . '" title="' . esc_attr( $title ) . '" href="' . esc_url( $href ) . '" />' . "\n";
 }
 
 /**
@@ -1679,7 +1681,8 @@ function feed_links_extra( $args = array() ) {
  * @since 2.0.0
  */
 function rsd_link() {
-	echo '<link rel="EditURI" type="application/rsd+xml" title="RSD" href="' . get_bloginfo('wpurl') . "/xmlrpc.php?rsd\" />\n";
+    //comment by hanxianlong, don't output EditURL meta
+	//echo '<link rel="EditURI" type="application/rsd+xml" title="RSD" href="' . get_bloginfo('wpurl') . "/xmlrpc.php?rsd\" />\n";
 }
 
 /**
@@ -1689,8 +1692,9 @@ function rsd_link() {
  * @since 2.3.1
  */
 function wlwmanifest_link() {
-	echo '<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="'
-		. get_bloginfo('wpurl') . '/wp-includes/wlwmanifest.xml" /> ' . "\n";
+        //commented by hanxianlong, don't output link rel="wlwmanifest" meta
+//	echo '<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="'
+//		. get_bloginfo('wpurl') . '/wp-includes/wlwmanifest.xml" /> ' . "\n";
 }
 
 /**
@@ -2159,6 +2163,8 @@ function the_generator( $type ) {
  * @return string The HTML content for the generator.
  */
 function get_the_generator( $type = '' ) {
+    //commented by hanxianlong, don't output generator meta
+    return;
 	if ( empty( $type ) ) {
 
 		$current_filter = current_filter();
