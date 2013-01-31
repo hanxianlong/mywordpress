@@ -1,5 +1,4 @@
 ﻿<?php
-
 // Exit if accessed directly
 if ( !defined('ABSPATH')) exit;
 
@@ -22,9 +21,7 @@ if ( !defined('ABSPATH')) exit;
  */
 ?>
 <?php get_header(); ?>
-
  <?php $options = get_option('responsive_theme_options');?>
-
 <div id="featured" class="grid col-940">
 	<div class="left right-margin"  >
 		<?php 
