@@ -1,5 +1,4 @@
-﻿<?php
-
+<?php
 // Exit if accessed directly
 if ( !defined('ABSPATH')) exit;
 
@@ -182,105 +181,105 @@ function responsive_theme_options_do_page() {
                  * Homepage Headline
                  */
                 ?>
-                <div class="grid col-300">焦点图左一(图片地址):</div><!-- end of .grid col-300 -->
+                <div class="grid col-300">����ͼ��һ(ͼƬ��ַ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_left1_img]" class="regular-text" type="text" name="responsive_theme_options[home_focus_left1_img]" value="<?php if (!empty($options['home_focus_left1_img'])) echo esc_attr($options['home_focus_left1_img']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_left1_img]">焦点图左一</label>
+                    <label class="description" for="responsive_theme_options[home_focus_left1_img]">����ͼ��һ</label>
                 </div><!-- end of .grid col-620 -->
 
-				<div class="grid col-300">焦点图左一(链接地址):</div><!-- end of .grid col-300 -->
+				<div class="grid col-300">����ͼ��һ(t�ӵ�ַ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_left1_link]" class="regular-text" type="text" name="responsive_theme_options[home_focus_left1_link]" value="<?php if (!empty($options['home_focus_left1_link'])) echo esc_attr($options['home_focus_left1_link']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_left1_link]">焦点图左一链接地址</label>
+                    <label class="description" for="responsive_theme_options[home_focus_left1_link]">����ͼ��һt�ӵ�ַ</label>
                 </div><!-- end of .grid col-620 -->
-					<div class="grid col-300">焦点图左一(鼠标提示):</div><!-- end of .grid col-300 -->
+					<div class="grid col-300">����ͼ��һ(�����ʾ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_left1_title]" class="regular-text" type="text" name="responsive_theme_options[home_focus_left1_title]" value="<?php if (!empty($options['home_focus_left1_title'])) echo esc_attr($options['home_focus_left1_title']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_left1_title]">焦点图左一鼠标提示</label>
+                    <label class="description" for="responsive_theme_options[home_focus_left1_title]">����ͼ��һ�����ʾ</label>
                 </div><!-- end of .grid col-620 -->
 
-				 <div class="grid col-300">焦点图中上(图片地址):</div><!-- end of .grid col-300 -->
+				 <div class="grid col-300">����ͼ����(ͼƬ��ַ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_middle1_img]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle1_img]" value="<?php if (!empty($options['home_focus_middle1_img'])) echo esc_attr($options['home_focus_middle1_img']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_middle1_img]">焦点图中上(图片地址)</label>
+                    <label class="description" for="responsive_theme_options[home_focus_middle1_img]">����ͼ����(ͼƬ��ַ)</label>
                 </div><!-- end of .grid col-620 -->
 
-				<div class="grid col-300">焦点图中上(链接地址):</div><!-- end of .grid col-300 -->
+				<div class="grid col-300">����ͼ����(t�ӵ�ַ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_middle1_link]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle1_link]" value="<?php if (!empty($options['home_focus_middle1_link'])) echo esc_attr($options['home_focus_middle1_link']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_middle1_link]">焦点图中上</label>
+                    <label class="description" for="responsive_theme_options[home_focus_middle1_link]">����ͼ����</label>
                 </div><!-- end of .grid col-620 -->
-					<div class="grid col-300">焦点图中上(鼠标提示):</div><!-- end of .grid col-300 -->
+					<div class="grid col-300">����ͼ����(�����ʾ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_middle1_title]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle1_title]" value="<?php if (!empty($options['home_focus_middle1_title'])) echo esc_attr($options['home_focus_middle1_title']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_middle1_title]">焦点图中上</label>
+                    <label class="description" for="responsive_theme_options[home_focus_middle1_title]">����ͼ����</label>
                 </div><!-- end of .grid col-620 -->
-					  <div class="grid col-300">焦点图中下左(图片地址):</div><!-- end of .grid col-300 -->
+					  <div class="grid col-300">����ͼ������(ͼƬ��ַ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_middle2_img]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle2_img]" value="<?php if (!empty($options['home_focus_middle2_img'])) echo esc_attr($options['home_focus_middle2_img']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_middle2_img]">焦点图中下左(图片地址)</label>
+                    <label class="description" for="responsive_theme_options[home_focus_middle2_img]">����ͼ������(ͼƬ��ַ)</label>
                 </div><!-- end of .grid col-620 -->
 
-				<div class="grid col-300">焦点图中下左(链接地址):</div><!-- end of .grid col-300 -->
+				<div class="grid col-300">����ͼ������(t�ӵ�ַ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_middle2_link]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle2_link]" value="<?php if (!empty($options['home_focus_middle2_link'])) echo esc_attr($options['home_focus_middle2_link']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_left1_link]">焦点图中下左</label>
+                    <label class="description" for="responsive_theme_options[home_focus_left1_link]">����ͼ������</label>
                 </div><!-- end of .grid col-620 -->
-					<div class="grid col-300">焦点图中下左(鼠标提示):</div><!-- end of .grid col-300 -->
+					<div class="grid col-300">����ͼ������(�����ʾ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_middle2_title]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle2_title]" value="<?php if (!empty($options['home_focus_middle2_title'])) echo esc_attr($options['home_focus_middle2_title']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_middle2_title]">焦点图中下左</label>
+                    <label class="description" for="responsive_theme_options[home_focus_middle2_title]">����ͼ������</label>
                 </div><!-- end of .grid col-620 -->
 
-				 <div class="grid col-300">焦点图中下右(图片地址):</div><!-- end of .grid col-300 -->
+				 <div class="grid col-300">����ͼ������(ͼƬ��ַ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_middle3_img]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle3_img]" value="<?php if (!empty($options['home_focus_middle3_img'])) echo esc_attr($options['home_focus_middle3_img']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_middle3_img]">焦点图中下右(图片地址)</label>
+                    <label class="description" for="responsive_theme_options[home_focus_middle3_img]">����ͼ������(ͼƬ��ַ)</label>
                 </div><!-- end of .grid col-620 -->
 
-				<div class="grid col-300">焦点图中下右(链接地址):</div><!-- end of .grid col-300 -->
+				<div class="grid col-300">����ͼ������(t�ӵ�ַ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_middle3_link]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle3_link]" value="<?php if (!empty($options['home_focus_middle3_link'])) echo esc_attr($options['home_focus_middle3_link']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_middle3_link]">焦点图中下右</label>
+                    <label class="description" for="responsive_theme_options[home_focus_middle3_link]">����ͼ������</label>
                 </div><!-- end of .grid col-620 -->
-					<div class="grid col-300">焦点图中下右(鼠标提示):</div><!-- end of .grid col-300 -->
+					<div class="grid col-300">����ͼ������(�����ʾ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_middle3_title]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle3_title]" value="<?php if (!empty($options['home_focus_middle3_title'])) echo esc_attr($options['home_focus_middle3_title']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_middle3_title]">焦点图中下右</label>
+                    <label class="description" for="responsive_theme_options[home_focus_middle3_title]">����ͼ������</label>
                 </div><!-- end of .grid col-620 -->
 
-				 <div class="grid col-300">焦点图右上(图片地址):</div><!-- end of .grid col-300 -->
+				 <div class="grid col-300">����ͼ����(ͼƬ��ַ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_right1_img]" class="regular-text" type="text" name="responsive_theme_options[home_focus_right1_img]" value="<?php if (!empty($options['home_focus_right1_img'])) echo esc_attr($options['home_focus_right1_img']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_right1_img]">焦点图右上(图片地址)</label>
+                    <label class="description" for="responsive_theme_options[home_focus_right1_img]">����ͼ����(ͼƬ��ַ)</label>
                 </div><!-- end of .grid col-620 -->
 
-				<div class="grid col-300">焦点图右上(链接地址):</div><!-- end of .grid col-300 -->
+				<div class="grid col-300">����ͼ����(t�ӵ�ַ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_right1_link]" class="regular-text" type="text" name="responsive_theme_options[home_focus_right1_link]" value="<?php if (!empty($options['home_focus_right1_link'])) echo esc_attr($options['home_focus_right1_link']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_right1_link]">焦点图右上</label>
+                    <label class="description" for="responsive_theme_options[home_focus_right1_link]">����ͼ����</label>
                 </div><!-- end of .grid col-620 -->
-					<div class="grid col-300">焦点图右上(鼠标提示):</div><!-- end of .grid col-300 -->
+					<div class="grid col-300">����ͼ����(�����ʾ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_right1_title]" class="regular-text" type="text" name="responsive_theme_options[home_focus_right1_title]" value="<?php if (!empty($options['home_focus_right1_title'])) echo esc_attr($options['home_focus_right1_title']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_right1_title]">焦点图右上</label>
+                    <label class="description" for="responsive_theme_options[home_focus_right1_title]">����ͼ����</label>
                 </div><!-- end of .grid col-620 -->
 
-				 <div class="grid col-300">焦点图右下(图片地址):</div><!-- end of .grid col-300 -->
+				 <div class="grid col-300">����ͼ����(ͼƬ��ַ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_right2_img]" class="regular-text" type="text" name="responsive_theme_options[home_focus_right2_img]" value="<?php if (!empty($options['home_focus_right2_img'])) echo esc_attr($options['home_focus_right2_img']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_right2_img]">焦点图右下(图片地址)</label>
+                    <label class="description" for="responsive_theme_options[home_focus_right2_img]">����ͼ����(ͼƬ��ַ)</label>
                 </div><!-- end of .grid col-620 -->
 
-				<div class="grid col-300">焦点图右下(链接地址):</div><!-- end of .grid col-300 -->
+				<div class="grid col-300">����ͼ����(t�ӵ�ַ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_right2_link]" class="regular-text" type="text" name="responsive_theme_options[home_focus_right2_link]" value="<?php if (!empty($options['home_focus_right2_link'])) echo esc_attr($options['home_focus_right2_link']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_right2_link]">焦点图右下</label>
+                    <label class="description" for="responsive_theme_options[home_focus_right2_link]">����ͼ����</label>
                 </div><!-- end of .grid col-620 -->
-					<div class="grid col-300">焦点图右下(鼠标提示):</div><!-- end of .grid col-300 -->
+					<div class="grid col-300">����ͼ����(�����ʾ):</div><!-- end of .grid col-300 -->
                 <div class="grid col-620 fit">
                     <input id="responsive_theme_options[home_focus_right2_title]" class="regular-text" type="text" name="responsive_theme_options[home_focus_right2_title]" value="<?php if (!empty($options['home_focus_right2_title'])) echo esc_attr($options['home_focus_right2_title']); ?>" />
-                    <label class="description" for="responsive_theme_options[home_focus_right2_title]">焦点图右下</label>
+                    <label class="description" for="responsive_theme_options[home_focus_right2_title]">����ͼ����</label>
                 </div><!-- end of .grid col-620 -->
                     <div class="grid col-620 fit">
                         <p class="submit">
@@ -299,10 +298,10 @@ function responsive_theme_options_do_page() {
                  * Social Media
                  */
                 ?>
-                <div class="grid col-300">新浪微博</div><!-- end of .grid col-300 -->
+                <div class="grid col-300">����΢��</div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
                         <input id="responsive_theme_options[twitter_uid]" class="regular-text" type="text" name="responsive_theme_options[twitter_uid]" value="<?php if (!empty($options['twitter_uid'])) echo esc_url($options['twitter_uid']); ?>" />
-                        <label class="description" for="responsive_theme_options[twitter_uid]">输入微博地址</label>
+                        <label class="description" for="responsive_theme_options[twitter_uid]">����΢����ַ</label>
                     </div><!-- end of .grid col-620 -->
                     
                     <div class="grid col-620 fit">
