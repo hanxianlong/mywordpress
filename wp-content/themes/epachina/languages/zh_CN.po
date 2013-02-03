@@ -489,9 +489,6 @@ msgstr "禁用路径导航？"
 msgid "Check to disable"
 msgstr "勾选以禁用"
 
-#: includes/theme-options.php
-msgid "Disable Call to Action Button?"
-msgstr "禁用“开始行动”按钮？"
 
 #: includes/theme-options.php
 msgid "Save Options"
@@ -540,22 +537,6 @@ msgstr "正文"
 #: includes/theme-options.php
 msgid "Enter your content"
 msgstr "输入正文"
-
-#: includes/theme-options.php
-msgid "Call to Action (URL)"
-msgstr "开始行动 （链接）"
-
-#: includes/theme-options.php
-msgid "Enter your call to action URL"
-msgstr "输入“开始行动”按钮的链接"
-
-#: includes/theme-options.php
-msgid "Call to Action (Text)"
-msgstr "开始行动 （文字）"
-
-#: includes/theme-options.php
-msgid "Enter your call to action text"
-msgstr "输入“开始行动”按钮的文字 "
 
 #: includes/theme-options.php
 msgid "Featured Content"

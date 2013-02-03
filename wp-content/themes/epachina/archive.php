@@ -43,7 +43,7 @@ if ( !defined('ABSPATH')) exit;
         <?php while (have_posts()) : the_post(); ?>
         
             <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <h1 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php  the_title_attribute();?>">»<?php the_title(); ?></a></h1>
+                <h1 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php  the_title_attribute();?>"><?php the_title(); ?></a></h1>
                 
                 <div class="post-meta">
                     <?php printf(__('Posted in %s', 'responsive'), get_the_category_list(', ')); ?>
