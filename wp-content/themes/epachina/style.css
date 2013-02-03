@@ -333,7 +333,8 @@ svg:not(:root) {
 /* =Links
 -------------------------------------------------------------- */
 a {
-	color: #06c;
+	/*color: #06c;*/
+        color:#313131;
 	font-weight: 400;
 	text-decoration: none;
 }
@@ -346,6 +347,7 @@ a:active {
 	text-decoration: none;
 }
 
+a:hover{ text-decoration:underline;}
 ::selection {
 	background: #999;
     color: #fff;
@@ -1363,11 +1365,11 @@ form div {
 /* =Featured Content
 -------------------------------------------------------------- */
 #featured {
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
+/*	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;*/
 	background-color: #fff;
-	border: 0px solid #e5e5e5;
-	border-radius: 4px;
+	/*border: 0px solid #e5e5e5;
+	border-radius: 4px;*/
 	width: 99.893617021277%;
 }
 #featured div{ float:left; position:relative; overflow:hidden; cursor:pointer;}
@@ -1380,7 +1382,7 @@ form div {
 #featured .half-height { height:125px; width:100%;}
 #featured .half-width { height:125px; width:50%;}
 #featured .bottom-margin{ margin-bottom:10px;}
-#featured .right-margin{ margin-right:10px;}
+#featured .right-margin{ margin-right:16px;}
 #featured img{height:100%; width:100%;}
 #featured img:hover
 { opacity:0.8;
@@ -1477,8 +1479,8 @@ form div {
 -------------------------------------------------------------- */
 .widget-wrapper {
 	-webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-	background-color: #f9f9f9;
+       -moz-border-radius: 4px;
+	/*background-color: #f9f9f9;*/
 	border: 1px solid #e5e5e5;
 	border-radius: 4px;
 	margin: 0 0 20px;
@@ -1503,21 +1505,14 @@ form div {
 	display: inline-block;
 	margin: 0;
 	padding: 0;
-	text-decoration: none;
 }
 
 #widgets form {
     margin: 0;
 }
-
-#widgets ul,
-#widgets ol {
-    padding: 0 0 0 20px;
-}
-
+ 
 #widgets ul li a {
 	display: inline;
-	text-decoration: none;
 }
 
 #widgets .widget-title img {
@@ -1618,12 +1613,13 @@ form div {
 .widget-title, 
 .widget-title-home h3 {
 	display: block;
-	font-size: 24px;
-	font-weight: 700;
+       font-family: 微软雅黑,黑体;
+	font-size: 16px;
 	line-height: 23px;
 	margin: 0;
-	padding: 0 0 20px 0;
+	padding:0px;
 	text-align: left;
+        color:#b3330e;
 }
 
 .top-widget .widget-title {
@@ -2902,11 +2898,7 @@ BDO[DIR="rtl"] {
 }
 
 @media screen and (max-width: 240px) {
-    
     body {}
-	
- 
-    
     .top-widget area,
     .top-widget select,
     .top-widget textarea,
@@ -2938,7 +2930,11 @@ BDO[DIR="rtl"] {
 /*The last 29 days of the month are the hardest."- Nikola Tesla*/
 /**/
 .category-blogs{ border-bottom:1px dotted gray;}
-.post-title{font-size:15px; margin-top: 1.2em;}
+.post-title{font-size:15px; margin-top: 1.2em; padding-left: 20px;}
+.post-title a{ color:#BA350F;}
+.post-title a:hover{ color:#BA350F;}
+.post-meta a{color:#900}
+.post-meta a:hover{ text-decoration:underline;}
 .current-cat >a{ color:Red;}
 body{margin:0px;}
 .contact span{background: url(images/bg.gif) 0px 5px; height: 40px; width:43px; display:inline-block; border:0;}
@@ -2946,3 +2942,26 @@ body{margin:0px;}
 .contact span.mail{ background-position: 0px -37px;}
 .contact span.fax{ background-position:  0px -84px;}
 .contact p{ text-indent: 50px;}
+.home-widgets{ margin-bottom:30px;}
+.home-widgets .widget-wrapper{ padding:0px; padding-left: 20px}
+.home-new-articles .widget-wrapper {border:0px;padding:0px;}
+.widget_recent_video h3,.home-new-articles h3 {font-style: italic;}
+.post-entry p{ text-indent: 20px;}
+.widget-home-right {-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border: 1px solid #e5e5e5;
+	border-radius: 4px;
+	margin: 0; margin-bottom: 20px; padding:0px; padding-top:20px; }
+.widget-home-right .widget-wrapper{ border:0px; padding:5px; }
+.widget-home-right h3 { border-bottom:solid 1px #FCC; padding-left:20px; border-top:solid 1px #FCC;line-height:35px; margin-bottom:5px;  background-color:#fbf8e1;}
+.widget-home-right ul{padding-left:0px; margin:0px; margin-left:5px;}
+.widget-home-right li{list-style: none; background:url(images/bg.gif) -5px -126px no-repeat; line-height:25px; height:25px; padding-left: 25px;}
+.home-widgets .widget_recent_video .video-item{float:left; width:220px; height:200px; margin-top:20px; margin-left:15px; }
+.home-widgets .widget_recent_video { border:0px; margin:0 auto; width:100%; padding-left:0px;}
+.line{height:4px; background:#ccc;}
+.home-notice{width: 90%;
+padding: 5px;
+overflow: hidden;
+background: #FFEA97;
+border: 1px solid #E1B400;
+color: #779B39; margin:0 auto; margin-top: -20px;}

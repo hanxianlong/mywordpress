@@ -738,7 +738,7 @@ function is_admin_bar_showing() {
 		return true;
 
         //modified by hanxianlong,20130203,hide admin bar in front pages.
-        return false;
+        //return false;
 	if ( ! isset( $show_admin_bar ) ) {
 		if ( ! is_user_logged_in() || 'wp-login.php' == $pagenow ) {
 			$show_admin_bar = false;
