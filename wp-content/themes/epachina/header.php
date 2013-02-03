@@ -1,5 +1,4 @@
 <?php
-
 // Exit if accessed directly
 if ( !defined('ABSPATH')) exit;
 
@@ -19,28 +18,26 @@ if ( !defined('ABSPATH')) exit;
  */
 ?>
 <!doctype html>
+<?php /*
 <!--[if !IE]>      <html class="no-js non-ie" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 7 ]>    <html class="no-js ie7" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 8 ]>    <html class="no-js ie8" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 9 ]>    <html class="no-js ie9" <?php language_attributes(); ?>> <![endif]-->
 <!--[if gt IE 9]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
+ */ ?>
+<html>
 <head>
-
 <meta charset="<?php bloginfo('charset'); ?>" />
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
 <title><?php wp_title('&#124;', true, 'right'); ?></title>
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php wp_enqueue_style('responsive-style', get_stylesheet_uri(), false, '1.8.7');?>
+<?php wp_enqueue_style('epachina.org-style', get_stylesheet_uri(), false, '1.8.7');?>
 
 <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
-                 
 <?php responsive_container(); // before container hook ?>
 <div id="container" class="hfeed">
-         
+
     <?php responsive_header(); // before header hook ?>
     <div id="header">
         <div id="top-container">

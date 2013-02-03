@@ -675,6 +675,8 @@ final class WP_Screen {
 	 *
 	 */
 	public function add_help_tab( $args ) {
+            //commented by hanxianlong,20130202, remove help bars on pages;
+            return;
 		$defaults = array(
 			'title'    => false,
 			'id'       => false,

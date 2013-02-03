@@ -18,6 +18,30 @@ if ( !defined('ABSPATH')) exit;
  * @since          available since Release 1.0
  */
 ?>  
+<?php $options = get_option('responsive_theme_options');?>
+ <div class="home-widgets">
+        <div class="grid col-300 contact">
+            <div>
+                <span class="address"></span>
+                <h3>地址</h3>
+            </div>
+            <p><?php echo $options['address']; ?></p>
+        </div>
+     <div class="grid col-300 contact">
+            <div>
+                <span class="fax"></span>
+                <h3>传真</h3>
+            </div>
+         <p><?php echo $options['fax']; ?></p>
+      </div>
+      <div class="grid col-220 contact">
+            <div>
+                <span class="mail"></span>
+                <h3>邮箱</h3>
+            </div>
+          <p><?php echo $options['mail']; ?></p>
+      </div>
+ </div>
     <div id="widgets" class="home-widgets">
         <div class="grid col-300">
         <?php responsive_widgets(); // above widgets hook ?>
@@ -42,7 +66,6 @@ if ( !defined('ABSPATH')) exit;
             
                 <div class="widget-title-home"><h3><?php _e('Home Widget 2', 'responsive'); ?></h3></div>
                 <div class="textwidget"><?php _e('This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area 7 called Home Widget 2. Title is also manageable from widgets as well.','responsive'); ?></div>
-            
 			</div><!-- end of .widget-wrapper -->
 			<?php endif; //end of home-widget-2 ?>
             

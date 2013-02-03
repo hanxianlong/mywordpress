@@ -53,26 +53,26 @@ function wp_dashboard_setup() {
 		$recent_comments_title = __( 'Recent Comments' );
 		wp_add_dashboard_widget( 'dashboard_recent_comments', $recent_comments_title, 'wp_dashboard_recent_comments', 'wp_dashboard_recent_comments_control' );
 	}
-
+//        commented by hanxianlong,20130203, block incoming links
 	// Incoming Links Widget
-	if ( is_blog_admin() && current_user_can('publish_posts') ) {
-		if ( !isset( $widget_options['dashboard_incoming_links'] ) || !isset( $widget_options['dashboard_incoming_links']['home'] ) || $widget_options['dashboard_incoming_links']['home'] != get_option('home') ) {
-			$update = true;
-			$num_items = isset($widget_options['dashboard_incoming_links']['items']) ? $widget_options['dashboard_incoming_links']['items'] : 10;
-			$widget_options['dashboard_incoming_links'] = array(
-				'home' => get_option('home'),
-				'link' => apply_filters( 'dashboard_incoming_links_link', 'http://blogsearch.google.com/blogsearch?scoring=d&partner=wordpress&q=link:' . trailingslashit( get_option('home') ) ),
-				'url' => isset($widget_options['dashboard_incoming_links']['url']) ? apply_filters( 'dashboard_incoming_links_feed', $widget_options['dashboard_incoming_links']['url'] ) : apply_filters( 'dashboard_incoming_links_feed', 'http://blogsearch.google.com/blogsearch_feeds?scoring=d&ie=utf-8&num=' . $num_items . '&output=rss&partner=wordpress&q=link:' . trailingslashit( get_option('home') ) ),
-				'items' => $num_items,
-				'show_date' => isset($widget_options['dashboard_incoming_links']['show_date']) ? $widget_options['dashboard_incoming_links']['show_date'] : false
-			);
-		}
-		wp_add_dashboard_widget( 'dashboard_incoming_links', __( 'Incoming Links' ), 'wp_dashboard_incoming_links', 'wp_dashboard_incoming_links_control' );
-	}
-
+//	if ( is_blog_admin() && current_user_can('publish_posts') ) {
+//		if ( !isset( $widget_options['dashboard_incoming_links'] ) || !isset( $widget_options['dashboard_incoming_links']['home'] ) || $widget_options['dashboard_incoming_links']['home'] != get_option('home') ) {
+//			$update = true;
+//			$num_items = isset($widget_options['dashboard_incoming_links']['items']) ? $widget_options['dashboard_incoming_links']['items'] : 10;
+//			$widget_options['dashboard_incoming_links'] = array(
+//				'home' => get_option('home'),
+//				'link' => apply_filters( 'dashboard_incoming_links_link', 'http://blogsearch.google.com/blogsearch?scoring=d&partner=wordpress&q=link:' . trailingslashit( get_option('home') ) ),
+//				'url' => isset($widget_options['dashboard_incoming_links']['url']) ? apply_filters( 'dashboard_incoming_links_feed', $widget_options['dashboard_incoming_links']['url'] ) : apply_filters( 'dashboard_incoming_links_feed', 'http://blogsearch.google.com/blogsearch_feeds?scoring=d&ie=utf-8&num=' . $num_items . '&output=rss&partner=wordpress&q=link:' . trailingslashit( get_option('home') ) ),
+//				'items' => $num_items,
+//				'show_date' => isset($widget_options['dashboard_incoming_links']['show_date']) ? $widget_options['dashboard_incoming_links']['show_date'] : false
+//			);
+//		}
+//		wp_add_dashboard_widget( 'dashboard_incoming_links', __( 'Incoming Links' ), 'wp_dashboard_incoming_links', 'wp_dashboard_incoming_links_control' );
+//	}
+        //commented by hanxianlong,20130203, block wp_dashboard_plugins
 	// WP Plugins Widget
-	if ( ( ! is_multisite() && is_blog_admin() && current_user_can( 'install_plugins' ) ) || ( is_network_admin() && current_user_can( 'manage_network_plugins' ) && current_user_can( 'install_plugins' ) ) )
-		wp_add_dashboard_widget( 'dashboard_plugins', __( 'Plugins' ), 'wp_dashboard_plugins' );
+//	if ( ( ! is_multisite() && is_blog_admin() && current_user_can( 'install_plugins' ) ) || ( is_network_admin() && current_user_can( 'manage_network_plugins' ) && current_user_can( 'install_plugins' ) ) )
+//		wp_add_dashboard_widget( 'dashboard_plugins', __( 'Plugins' ), 'wp_dashboard_plugins' );
 
 	// QuickPress Widget
 	if ( is_blog_admin() && current_user_can('edit_posts') )
@@ -82,35 +82,37 @@ function wp_dashboard_setup() {
 	if ( is_blog_admin() && current_user_can('edit_posts') )
 		wp_add_dashboard_widget( 'dashboard_recent_drafts', __('Recent Drafts'), 'wp_dashboard_recent_drafts' );
 
+        //commented by hanxianlong,20130203, block wp_dashboard_primary_control
 	// Primary feed (Dev Blog) Widget
-	if ( !isset( $widget_options['dashboard_primary'] ) ) {
-		$update = true;
-		$widget_options['dashboard_primary'] = array(
-			'link' => apply_filters( 'dashboard_primary_link', __( 'http://wordpress.org/news/' ) ),
-			'url' => apply_filters( 'dashboard_primary_feed', __( 'http://wordpress.org/news/feed/' ) ),
-			'title' => apply_filters( 'dashboard_primary_title', __( 'WordPress Blog' ) ),
-			'items' => 2,
-			'show_summary' => 1,
-			'show_author' => 0,
-			'show_date' => 1,
-		);
-	}
-	wp_add_dashboard_widget( 'dashboard_primary', $widget_options['dashboard_primary']['title'], 'wp_dashboard_primary', 'wp_dashboard_primary_control' );
+//	if ( !isset( $widget_options['dashboard_primary'] ) ) {
+//		$update = true;
+//		$widget_options['dashboard_primary'] = array(
+//			'link' => apply_filters( 'dashboard_primary_link', __( 'http://wordpress.org/news/' ) ),
+//			'url' => apply_filters( 'dashboard_primary_feed', __( 'http://wordpress.org/news/feed/' ) ),
+//			'title' => apply_filters( 'dashboard_primary_title', __( 'WordPress Blog' ) ),
+//			'items' => 2,
+//			'show_summary' => 1,
+//			'show_author' => 0,
+//			'show_date' => 1,
+//		);
+//	}
+	//wp_add_dashboard_widget( 'dashboard_primary', $widget_options['dashboard_primary']['title'], 'wp_dashboard_primary', 'wp_dashboard_primary_control' );
 
-	// Secondary Feed (Planet) Widget
-	if ( !isset( $widget_options['dashboard_secondary'] ) ) {
-		$update = true;
-		$widget_options['dashboard_secondary'] = array(
-			'link' => apply_filters( 'dashboard_secondary_link', __( 'http://planet.wordpress.org/' ) ),
-			'url' => apply_filters( 'dashboard_secondary_feed', __( 'http://planet.wordpress.org/feed/' ) ),
-			'title' => apply_filters( 'dashboard_secondary_title', __( 'Other WordPress News' ) ),
-			'items' => 5,
-			'show_summary' => 0,
-			'show_author' => 0,
-			'show_date' => 0,
-		);
-	}
-	wp_add_dashboard_widget( 'dashboard_secondary', $widget_options['dashboard_secondary']['title'], 'wp_dashboard_secondary', 'wp_dashboard_secondary_control' );
+	       //commented by hanxianlong,20130203, block wp_dashboard_secondary_control
+// Secondary Feed (Planet) Widget
+//	if ( !isset( $widget_options['dashboard_secondary'] ) ) {
+//		$update = true;
+//		$widget_options['dashboard_secondary'] = array(
+//			'link' => apply_filters( 'dashboard_secondary_link', __( 'http://planet.wordpress.org/' ) ),
+//			'url' => apply_filters( 'dashboard_secondary_feed', __( 'http://planet.wordpress.org/feed/' ) ),
+//			'title' => apply_filters( 'dashboard_secondary_title', __( 'Other WordPress News' ) ),
+//			'items' => 5,
+//			'show_summary' => 0,
+//			'show_author' => 0,
+//			'show_date' => 0,
+//		);
+//	}
+	//wp_add_dashboard_widget( 'dashboard_secondary', $widget_options['dashboard_secondary']['title'], 'wp_dashboard_secondary', 'wp_dashboard_secondary_control' );
 
 	// Hook to register new widgets
 	// Filter widget order
@@ -197,7 +199,6 @@ function _wp_dashboard_control_callback( $dashboard, $meta_box ) {
 function wp_dashboard() {
 	$screen = get_current_screen();
 	$class = 'columns-' . get_current_screen()->get_columns();
-
 ?>
 <div id="dashboard-widgets" class="metabox-holder <?php echo $class; ?>">
 	<div id='postbox-container-1' class='postbox-container'>
@@ -217,7 +218,6 @@ function wp_dashboard() {
 <?php
 	wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
 	wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false );
-
 }
 
 /* Dashboard Widgets */
@@ -249,22 +249,6 @@ function wp_dashboard_right_now() {
 	echo '<td class="t posts">' . $text . '</td>';
 
 	echo '</tr><tr>';
-	/* TODO: Show status breakdown on hover
-	if ( $can_edit_pages && !empty($num_pages->publish) ) { // how many pages is not exposed in feeds. Don't show if !current_user_can
-		$post_type_texts[] = '<a href="edit-pages.php">'.sprintf( _n( '%s page', '%s pages', $num_pages->publish ), number_format_i18n( $num_pages->publish ) ).'</a>';
-	}
-	if ( $can_edit_posts && !empty($num_posts->draft) ) {
-		$post_type_texts[] = '<a href="edit.php?post_status=draft">'.sprintf( _n( '%s draft', '%s drafts', $num_posts->draft ), number_format_i18n( $num_posts->draft ) ).'</a>';
-	}
-	if ( $can_edit_posts && !empty($num_posts->future) ) {
-		$post_type_texts[] = '<a href="edit.php?post_status=future">'.sprintf( _n( '%s scheduled post', '%s scheduled posts', $num_posts->future ), number_format_i18n( $num_posts->future ) ).'</a>';
-	}
-	if ( current_user_can('publish_posts') && !empty($num_posts->pending) ) {
-		$pending_text = sprintf( _n( 'There is <a href="%1$s">%2$s post</a> pending your review.', 'There are <a href="%1$s">%2$s posts</a> pending your review.', $num_posts->pending ), 'edit.php?post_status=pending', number_format_i18n( $num_posts->pending ) );
-	} else {
-		$pending_text = '';
-	}
-	*/
 
 	// Pages
 	$num = number_format_i18n( $num_pages->publish );
@@ -363,46 +347,46 @@ function wp_dashboard_right_now() {
 	$theme = wp_get_theme();
 
 	echo "\n\t<p>";
-
 	if ( $theme->errors() ) {
 		if ( ! is_multisite() || is_super_admin() )
 			echo '<span class="error-message">' . __('ERROR: The themes directory is either empty or doesn&#8217;t exist. Please check your installation.') . '</span>';
 	} elseif ( ! empty($wp_registered_sidebars) ) {
-		$sidebars_widgets = wp_get_sidebars_widgets();
-		$num_widgets = 0;
-		foreach ( (array) $sidebars_widgets as $k => $v ) {
-			if ( 'wp_inactive_widgets' == $k || 'orphaned_widgets' == substr( $k, 0, 16 ) )
-				continue;
-			if ( is_array($v) )
-				$num_widgets = $num_widgets + count($v);
-		}
-		$num = number_format_i18n( $num_widgets );
-
-		$switch_themes = $theme->display('Name');
-		if ( current_user_can( 'switch_themes') )
-			$switch_themes = '<a href="themes.php">' . $switch_themes . '</a>';
-		if ( current_user_can( 'edit_theme_options' ) ) {
-			printf(_n('Theme <span class="b">%1$s</span> with <span class="b"><a href="widgets.php">%2$s Widget</a></span>', 'Theme <span class="b">%1$s</span> with <span class="b"><a href="widgets.php">%2$s Widgets</a></span>', $num_widgets), $switch_themes, $num);
-		} else {
-			printf(_n('Theme <span class="b">%1$s</span> with <span class="b">%2$s Widget</span>', 'Theme <span class="b">%1$s</span> with <span class="b">%2$s Widgets</span>', $num_widgets), $switch_themes, $num);
-		}
+//		$sidebars_widgets = wp_get_sidebars_widgets();
+//		$num_widgets = 0;
+//		foreach ( (array) $sidebars_widgets as $k => $v ) {
+//			if ( 'wp_inactive_widgets' == $k || 'orphaned_widgets' == substr( $k, 0, 16 ) )
+//				continue;
+//			if ( is_array($v) )
+//				$num_widgets = $num_widgets + count($v);
+//		}
+//		$num = number_format_i18n( $num_widgets );
+//
+//		$switch_themes = $theme->display('Name');
+//		if ( current_user_can( 'switch_themes') )
+//			$switch_themes = '<a href="themes.php">' . $switch_themes . '</a>';
+//		if ( current_user_can( 'edit_theme_options' ) ) {
+//			printf(_n('Theme <span class="b">%1$s</span> with <span class="b"><a href="widgets.php">%2$s Widget</a></span>', 'Theme <span class="b">%1$s</span> with <span class="b"><a href="widgets.php">%2$s Widgets</a></span>', $num_widgets), $switch_themes, $num);
+//		} else {
+//			printf(_n('Theme <span class="b">%1$s</span> with <span class="b">%2$s Widget</span>', 'Theme <span class="b">%1$s</span> with <span class="b">%2$s Widgets</span>', $num_widgets), $switch_themes, $num);
+//		}
 	} else {
-		if ( current_user_can( 'switch_themes' ) )
-			printf( __('Theme <span class="b"><a href="themes.php">%1$s</a></span>'), $theme->display('Name') );
-		else
-			printf( __('Theme <span class="b">%1$s</span>'), $theme->display('Name') );
+		//if ( current_user_can( 'switch_themes' ) )
+		//	printf( __('Theme <span class="b"><a href="themes.php">%1$s</a></span>'), $theme->display('Name') );
+		//else
+		//	printf( __('Theme <span class="b">%1$s</span>'), $theme->display('Name') );
 	}
 	echo '</p>';
 
 	// Check if search engines are asked not to index this site.
-	if ( !is_network_admin() && !is_user_admin() && current_user_can('manage_options') && '1' != get_option('blog_public') ) {
-		$title = apply_filters('privacy_on_link_title', __('Your site is asking search engines not to index its content') );
-		$content = apply_filters('privacy_on_link_text', __('Search Engines Discouraged') );
+//	if ( !is_network_admin() && !is_user_admin() && current_user_can('manage_options') && '1' != get_option('blog_public') ) {
+//		$title = apply_filters('privacy_on_link_title', __('Your site is asking search engines not to index its content') );
+//		$content = apply_filters('privacy_on_link_text', __('Search Engines Discouraged') );
+//
+//		echo "<p><a href='options-reading.php' title='$title'>$content</a></p>";
+//	}
 
-		echo "<p><a href='options-reading.php' title='$title'>$content</a></p>";
-	}
-
-	update_right_now_message();
+        //hide "update_right_now message on widget of dashboard
+	//update_right_now_message();
 
 	echo "\n\t".'<br class="clear" /></div>';
 	do_action( 'rightnow_end' );

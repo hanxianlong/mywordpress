@@ -20,6 +20,7 @@
  * @return mixed Returns null if update is unsupported. Returns false if check is too soon.
  */
 function wp_version_check() {
+	return;
 	if ( defined('WP_INSTALLING') )
 		return;
 

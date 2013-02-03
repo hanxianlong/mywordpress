@@ -11,7 +11,6 @@
 
 /** Load WordPress Administration Bootstrap */
 require_once( './admin.php' );
-
 // Load all the nav menu interface functions
 require_once( ABSPATH . 'wp-admin/includes/nav-menu.php' );
 

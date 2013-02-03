@@ -14,8 +14,8 @@ if ( !defined('ABSPATH') )
 <div class="clear"></div></div><!-- wpbody-content -->
 <div class="clear"></div></div><!-- wpbody -->
 <div class="clear"></div></div><!-- wpcontent -->
-
-<div id="wpfooter">
+<?php /* ?>
+<div id="wpfooter" style="">
 <?php do_action( 'in_admin_footer' ); ?>
 <p id="footer-left" class="alignleft"><?php
 echo apply_filters( 'admin_footer_text', '<span id="footer-thankyou">' . __( 'Thank you for creating with <a href="http://wordpress.org/">WordPress</a>.' ) . '</span>' );
@@ -23,6 +23,7 @@ echo apply_filters( 'admin_footer_text', '<span id="footer-thankyou">' . __( 'Th
 <p id="footer-upgrade" class="alignright"><?php echo apply_filters( 'update_footer', '' ); ?></p>
 <div class="clear"></div>
 </div>
+ */ ?>
 <?php
 do_action('admin_footer', '');
 do_action('admin_print_footer_scripts');
@@ -33,7 +34,6 @@ if ( function_exists('get_site_option') ) {
 	if ( false === get_site_option('can_compress_scripts') )
 		compression_test();
 }
-
 ?>
 
 <div class="clear"></div></div><!-- wpwrap -->

@@ -271,7 +271,7 @@ function get_theme_feature_list( $api = true ) {
  * @return mixed
  */
 function themes_api($action, $args = null) {
-
+        return;
 	if ( is_array($args) )
 		$args = (object)$args;
 

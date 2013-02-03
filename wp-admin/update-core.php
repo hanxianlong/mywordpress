@@ -423,7 +423,7 @@ get_current_screen()->set_help_sidebar(
 	'<p>' . __('<a href="http://codex.wordpress.org/Dashboard_Updates_Screen" target="_blank">Documentation on Updating WordPress</a>') . '</p>' .
 	'<p>' . __('<a href="http://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
 );
-
+*/
 if ( 'upgrade-core' == $action ) {
 
 	wp_version_check();

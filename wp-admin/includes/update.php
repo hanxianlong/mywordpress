@@ -113,7 +113,8 @@ function core_update_footer( $msg = '' ) {
 	break;
 	}
 }
-add_filter( 'update_footer', 'core_update_footer' );
+//commented by hanxianlong, 20130202,remove the update notices permanently
+//add_filter( 'update_footer', 'core_update_footer' );
 
 function update_nag() {
 	if ( is_multisite() && !current_user_can('update_core') )
@@ -128,7 +129,7 @@ function update_nag() {
 
 	if ( ! isset( $cur->response ) || $cur->response != 'upgrade' )
 		return false;
-
+        
 	if ( current_user_can('update_core') ) {
 		$msg = sprintf( __('<a href="http://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> is available! <a href="%2$s">Please update now</a>.'), $cur->current, network_admin_url( 'update-core.php' ) );
 	} else {
@@ -136,8 +137,9 @@ function update_nag() {
 	}
 	echo "<div class='update-nag'>$msg</div>";
 }
-add_action( 'admin_notices', 'update_nag', 3 );
-add_action( 'network_admin_notices', 'update_nag', 3 );
+//commented by hanxianlong, 20130202,remove the update notices permanently
+//add_action( 'admin_notices', 'update_nag', 3 );
+//add_action( 'network_admin_notices', 'update_nag', 3 );
 
 // Called directly from dashboard
 function update_right_now_message() {
@@ -291,8 +293,7 @@ function wp_update_core($current, $feedback = '') {
 
 	include ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 	$upgrader = new Core_Upgrader();
-	return $upgrader->upgrade($current);
-
+ 	return $upgrader->upgrade($current);
 }
 
 function maintenance_nag() {

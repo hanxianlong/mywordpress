@@ -69,7 +69,7 @@ TABLE OF CONTENTS:
 }
 
 #wpbody-content {
-	padding-bottom: 65px;
+	/*padding-bottom: 65px;*/
 	float: left;
 	width: 100%;
 }

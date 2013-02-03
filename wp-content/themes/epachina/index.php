@@ -55,7 +55,6 @@ if ( !defined('ABSPATH')) exit;
 
             <div class="post-edit"><?php edit_post_link(__('Edit', 'responsive')); ?></div>               
             </div><!-- end of #post-<?php the_ID(); ?> -->
-            
         <?php endwhile; ?> 
         
         <?php if (  $wp_query->max_num_pages > 1 ) : ?>

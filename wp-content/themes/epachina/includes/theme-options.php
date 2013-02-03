@@ -1,5 +1,4 @@
 <?php
-
 // Exit if accessed directly
 if ( !defined('ABSPATH')) exit;
 
@@ -138,7 +137,6 @@ function responsive_theme_options_do_page() {
         ?>
         <?php $theme_name = function_exists('wp_get_theme') ? wp_get_theme() : get_current_theme(); ?>
         <?php screen_icon(); echo "<h2>" . $theme_name ." ". __('Theme Options', 'responsive') . "</h2>"; ?>
-        
 
 		<?php if (false !== $_REQUEST['settings-updated']) : ?>
 		<div class="updated fade"><p><strong><?php _e('Options Saved', 'responsive'); ?></strong></p></div>
@@ -155,7 +153,6 @@ function responsive_theme_options_do_page() {
             <h3 class="rwd-toggle"><a href="#"><?php _e('Theme Elements', 'responsive'); ?></a></h3>
             <div class="rwd-container">
                 <div class="rwd-block"> 
-                               
                 <?php
                 /**
                  * Breadcrumb Lists
@@ -167,15 +164,7 @@ function responsive_theme_options_do_page() {
 						<label class="description" for="responsive_theme_options[breadcrumb]"><?php _e('Check to disable', 'responsive'); ?></label>
                     </div><!-- end of .grid col-620 -->
 
-                <?php
-                /**
-                 * CTA Button
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Disable Call to Action Button?', 'responsive'); ?></div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
-					    <input id="responsive_theme_options[cta_button]" name="responsive_theme_options[cta_button]" type="checkbox" value="1" <?php isset($options['cta_button']) ? checked( '1', $options['cta_button'] ) : checked('0', '1'); ?> />
-						<label class="description" for="responsive_theme_options[cta_button]"><?php _e('Check to disable', 'responsive'); ?></label>
                         <p class="submit">
                         <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
                         </p>
@@ -183,26 +172,8 @@ function responsive_theme_options_do_page() {
                                     
                 </div><!-- end of .rwd-block -->
             </div><!-- end of .rwd-container -->
-
-            <h3 class="rwd-toggle"><a href="#"><?php _e('Logo Upload', 'responsive'); ?></a></h3>
-            <div class="rwd-container">
-                <div class="rwd-block">
-                <?php
-                /**
-                 * Logo Upload
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Custom Header', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
                         
-                        <p><?php printf(__('Need to replace or remove default logo?','responsive')); ?> <?php printf(__('<a href="%s">Click here</a>.', 'responsive'), admin_url('themes.php?page=custom-header')); ?></p>
-                     			
-                    </div><!-- end of .grid col-620 -->
-                    
-                </div><!-- end of .rwd-block -->
-            </div><!-- end of .rwd-container -->
-                        
-            <h3 class="rwd-toggle"><a href="#"><?php _e('Home Page', 'responsive'); ?></a></h3>
+            <h3 class="rwd-toggle"><a href="#">焦点图</a></h3>
             <div class="rwd-container">
                 <div class="rwd-block">
                 <?php
@@ -210,69 +181,107 @@ function responsive_theme_options_do_page() {
                  * Homepage Headline
                  */
                 ?>
-                <div class="grid col-300"><?php _e('Headline', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[home_headline]" class="regular-text" type="text" name="responsive_theme_options[home_headline]" value="<?php if (!empty($options['home_headline'])) echo esc_attr($options['home_headline']); ?>" />
-                        <label class="description" for="responsive_theme_options[home_headline]"><?php _e('Enter your headline', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
+                <div class="grid col-300">焦点图左图地址:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_left1_img]" class="regular-text" type="text" name="responsive_theme_options[home_focus_left1_img]" value="<?php if (!empty($options['home_focus_left1_img'])) echo esc_attr($options['home_focus_left1_img']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_left1_img]">焦点图左图地址</label>
+                </div><!-- end of .grid col-620 -->
 
-                <?php
-                /**
-                 * Homepage Subheadline
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Subheadline', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[home_subheadline]" class="regular-text" type="text" name="responsive_theme_options[home_subheadline]" value="<?php if (!empty($options['home_subheadline'])) echo esc_attr($options['home_subheadline']); ?>" />
-                        <label class="description" for="responsive_theme_options[home_subheadline]"><?php _e('Enter your subheadline', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                    
-                <?php
-                /**
-                 * Homepage Content Area
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Content Area', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <textarea id="responsive_theme_options[home_content_area]" class="large-text" cols="50" rows="10" name="responsive_theme_options[home_content_area]"><?php if (!empty($options['home_content_area'])) echo esc_html($options['home_content_area']); ?></textarea>
-                        <label class="description" for="responsive_theme_options[home_content_area]"><?php _e('Enter your content', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                                
-                <?php
-                /**
-                 * Homepage Call to Action URL
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Call to Action (URL)', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[cta_url]" class="regular-text" type="text" name="responsive_theme_options[cta_url]" value="<?php if (!empty($options['cta_url'])) echo esc_url($options['cta_url']); ?>" />
-                        <label class="description" for="responsive_theme_options[cta_url]"><?php _e('Enter your call to action URL', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                
-                <?php
-                /**
-                 * Homepage Call to Action Text
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Call to Action (Text)', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[cta_text]" class="regular-text" type="text" name="responsive_theme_options[cta_text]" value="<?php if (!empty($options['cta_text'])) echo esc_attr($options['cta_text']); ?>" />
-                        <label class="description" for="responsive_theme_options[cta_text]"><?php _e('Enter your call to action text', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
+				<div class="grid col-300">焦点图左图链接:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_left1_link]" class="regular-text" type="text" name="responsive_theme_options[home_focus_left1_link]" value="<?php if (!empty($options['home_focus_left1_link'])) echo esc_attr($options['home_focus_left1_link']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_left1_link]">焦点图左图链接（如果不填写则该图无链接）</label>
+                </div><!-- end of .grid col-620 -->
+					<div class="grid col-300">焦点图左图文字描述:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_left1_title]" class="regular-text" type="text" name="responsive_theme_options[home_focus_left1_title]" value="<?php if (!empty($options['home_focus_left1_title'])) echo esc_attr($options['home_focus_left1_title']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_left1_title]">焦点图左图文字描述（如果不填写则无文字描述）</label>
+                </div><!-- end of .grid col-620 -->
 
-                <?php
-                /**
-                 * Homepage Featured Content
-                 */
-                ?>
-                <div class="grid col-300">
-				    <?php _e('Featured Content', 'responsive'); ?>
-                    <a class="help-links" href="<?php echo esc_url(__('http://themeid.com/forum/topic/510/theme-options-featured-content/','responsive')); ?>" title="<?php esc_attr_e('See Docs', 'responsive'); ?>" target="_blank">
-                    <?php printf(__('See Docs','responsive')); ?></a>
-                </div><!-- end of .grid col-300 -->
+				 <div class="grid col-300">焦点图中间上方图地址:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_middle1_img]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle1_img]" value="<?php if (!empty($options['home_focus_middle1_img'])) echo esc_attr($options['home_focus_middle1_img']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_middle1_img]">焦点图中间上方图地址</label>
+                </div><!-- end of .grid col-620 -->
+
+				<div class="grid col-300">焦点图中间上方图链接:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_middle1_link]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle1_link]" value="<?php if (!empty($options['home_focus_middle1_link'])) echo esc_attr($options['home_focus_middle1_link']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_middle1_link]">焦点图中间上方图链接（如果不填写则无链接）</label>
+                </div><!-- end of .grid col-620 -->
+					<div class="grid col-300">焦点图中间上方图文字描述:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_middle1_title]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle1_title]" value="<?php if (!empty($options['home_focus_middle1_title'])) echo esc_attr($options['home_focus_middle1_title']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_middle1_title]">焦点图中间上方图文字描述（如果不填写则无描述）</label>
+                </div><!-- end of .grid col-620 -->
+					  <div class="grid col-300">焦点图中间下方左图地址：</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_middle2_img]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle2_img]" value="<?php if (!empty($options['home_focus_middle2_img'])) echo esc_attr($options['home_focus_middle2_img']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_middle2_img]">焦点图中间下文左图</label>
+                </div><!-- end of .grid col-620 -->
+
+				<div class="grid col-300">焦点图中间下方左图链接：</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_middle2_link]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle2_link]" value="<?php if (!empty($options['home_focus_middle2_link'])) echo esc_attr($options['home_focus_middle2_link']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_left1_link]">焦点图中间下文左图链接</label>
+                </div><!-- end of .grid col-620 -->
+					<div class="grid col-300">焦点图中间下方左图文字描述:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_middle2_title]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle2_title]" value="<?php if (!empty($options['home_focus_middle2_title'])) echo esc_attr($options['home_focus_middle2_title']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_middle2_title]">焦点图中间下文左图文字描述</label>
+                </div><!-- end of .grid col-620 -->
+
+				 <div class="grid col-300">焦点图中间下方右图地址:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_middle3_img]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle3_img]" value="<?php if (!empty($options['home_focus_middle3_img'])) echo esc_attr($options['home_focus_middle3_img']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_middle3_img]">焦点图中间下方右图地址</label>
+                </div><!-- end of .grid col-620 -->
+
+				<div class="grid col-300">焦点图中间下方右图文字链接:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_middle3_link]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle3_link]" value="<?php if (!empty($options['home_focus_middle3_link'])) echo esc_attr($options['home_focus_middle3_link']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_middle3_link]">焦点图中间下方右图文字链接</label>
+                </div><!-- end of .grid col-620 -->
+					<div class="grid col-300">焦点图中间下方右侧文字描述:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_middle3_title]" class="regular-text" type="text" name="responsive_theme_options[home_focus_middle3_title]" value="<?php if (!empty($options['home_focus_middle3_title'])) echo esc_attr($options['home_focus_middle3_title']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_middle3_title]">焦点图中间下方右侧文字描述</label>
+                </div><!-- end of .grid col-620 -->
+
+				 <div class="grid col-300">焦点图右侧上方图片地址:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_right1_img]" class="regular-text" type="text" name="responsive_theme_options[home_focus_right1_img]" value="<?php if (!empty($options['home_focus_right1_img'])) echo esc_attr($options['home_focus_right1_img']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_right1_img]">焦点图右侧上方图片地址</label>
+                </div><!-- end of .grid col-620 -->
+
+				<div class="grid col-300">焦点图右侧上方链接:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_right1_link]" class="regular-text" type="text" name="responsive_theme_options[home_focus_right1_link]" value="<?php if (!empty($options['home_focus_right1_link'])) echo esc_attr($options['home_focus_right1_link']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_right1_link]">焦点图右侧上方链接</label>
+                </div><!-- end of .grid col-620 -->
+					<div class="grid col-300">焦点图右侧上方文字描述:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_right1_title]" class="regular-text" type="text" name="responsive_theme_options[home_focus_right1_title]" value="<?php if (!empty($options['home_focus_right1_title'])) echo esc_attr($options['home_focus_right1_title']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_right1_title]">焦点图右侧上方文字描述</label>
+                </div><!-- end of .grid col-620 -->
+
+				 <div class="grid col-300">焦点图右侧下方图片地址:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_right2_img]" class="regular-text" type="text" name="responsive_theme_options[home_focus_right2_img]" value="<?php if (!empty($options['home_focus_right2_img'])) echo esc_attr($options['home_focus_right2_img']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_right2_img]">焦点图右侧下方图片地址</label>
+                </div><!-- end of .grid col-620 -->
+
+				<div class="grid col-300">焦点图右侧下方链接:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_right2_link]" class="regular-text" type="text" name="responsive_theme_options[home_focus_right2_link]" value="<?php if (!empty($options['home_focus_right2_link'])) echo esc_attr($options['home_focus_right2_link']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_right2_link]">焦点图右侧下方链接</label>
+                </div><!-- end of .grid col-620 -->
+					<div class="grid col-300">焦点图右侧下方文字描述:</div><!-- end of .grid col-300 -->
+                <div class="grid col-620 fit">
+                    <input id="responsive_theme_options[home_focus_right2_title]" class="regular-text" type="text" name="responsive_theme_options[home_focus_right2_title]" value="<?php if (!empty($options['home_focus_right2_title'])) echo esc_attr($options['home_focus_right2_title']); ?>" />
+                    <label class="description" for="responsive_theme_options[home_focus_right2_title]">焦点图右侧下方文字描述</label>
+                </div><!-- end of .grid col-620 -->
                     <div class="grid col-620 fit">
-                        <textarea id="responsive_theme_options[featured_content]" class="large-text" cols="50" rows="10" name="responsive_theme_options[featured_content]"><?php if (!empty($options['featured_content'])) echo esc_html($options['featured_content']); ?></textarea>
-                        <label class="description" for="responsive_theme_options[featured_content]"><?php _e('Paste your shortcode, video or image source', 'responsive'); ?></label>
                         <p class="submit">
                         <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
                         </p>
@@ -281,143 +290,21 @@ function responsive_theme_options_do_page() {
                 </div><!-- end of .rwd-block -->
             </div><!-- end of .rwd-container -->
 
-            <h3 class="rwd-toggle"><a href="#"><?php _e('Webmaster Tools', 'responsive'); ?></a></h3>
+            <h3 class="rwd-toggle"><a href="#">微博</a></h3>
             <div class="rwd-container">
-                <div class="rwd-block"> 
-                               
-                <?php
-                /**
-                 * Google Site Verification
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Google Site Verification', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[google_site_verification]" class="regular-text" type="text" name="responsive_theme_options[google_site_verification]" value="<?php if (!empty($options['google_site_verification'])) echo esc_attr($options['google_site_verification']); ?>" />
-                        <label class="description" for="responsive_theme_options[google_site_verification]"><?php _e('Enter your Google ID number only', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                
-                <?php
-                /**
-                 * Bing Site Verification
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Bing Site Verification', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[bing_site_verification]" class="regular-text" type="text" name="responsive_theme_options[bing_site_verification]" value="<?php if (!empty($options['bing_site_verification'])) echo esc_attr($options['bing_site_verification']); ?>" />
-                        <label class="description" for="responsive_theme_options[bing_site_verification]"><?php _e('Enter your Bing ID number only', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                
-                <?php
-                /**
-                 * Yahoo Site Verification
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Yahoo Site Verification', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[yahoo_site_verification]" class="regular-text" type="text" name="responsive_theme_options[yahoo_site_verification]" value="<?php if (!empty($options['yahoo_site_verification'])) echo esc_attr($options['yahoo_site_verification']); ?>" />
-                        <label class="description" for="responsive_theme_options[yahoo_site_verification]"><?php _e('Enter your Yahoo ID number only', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                    
-                <?php
-                /**
-                 * Site Statistics Tracker
-                 */
-                ?>
-                <div class="grid col-300">
-				    <?php _e('Site Statistics Tracker', 'responsive'); ?>
-                    <span class="info-box information help-links"><?php _e('Leave blank if plugin handles your webmaster tools', 'responsive'); ?></span>
-                </div><!-- end of .grid col-300 -->
-                    
-                    <div class="grid col-620 fit">
-                        <textarea id="responsive_theme_options[site_statistics_tracker]" class="large-text" cols="50" rows="10" name="responsive_theme_options[site_statistics_tracker]"><?php if (!empty($options['site_statistics_tracker'])) echo esc_textarea($options['site_statistics_tracker']); ?></textarea>
-                        <label class="description" for="responsive_theme_options[site_statistics_tracker]"><?php _e('Google Analytics, StatCounter, any other or all of them.', 'responsive'); ?></label>
-                        <p class="submit">
-                        <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
-                        </p>
-                    </div><!-- end of .grid col-620 -->
-                
-                </div><!-- end of .rwd-block -->
-            </div><!-- end of .rwd-container -->
-
-            <h3 class="rwd-toggle"><a href="#"><?php _e('Social Icons', 'responsive'); ?></a></h3>
-            <div class="rwd-container">
-                <div class="rwd-block"> 
-                            
+                <div class="rwd-block">
                 <?php
                 /**
                  * Social Media
                  */
                 ?>
-                <div class="grid col-300"><?php _e('Twitter', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                <div class="grid col-300">微博地址</div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
                         <input id="responsive_theme_options[twitter_uid]" class="regular-text" type="text" name="responsive_theme_options[twitter_uid]" value="<?php if (!empty($options['twitter_uid'])) echo esc_url($options['twitter_uid']); ?>" />
-                        <label class="description" for="responsive_theme_options[twitter_uid]"><?php _e('Enter your Twitter URL', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-
-                <div class="grid col-300"><?php _e('Facebook', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[facebook_uid]" class="regular-text" type="text" name="responsive_theme_options[facebook_uid]" value="<?php if (!empty($options['facebook_uid'])) echo esc_url($options['facebook_uid']); ?>" />
-                        <label class="description" for="responsive_theme_options[facebook_uid]"><?php _e('Enter your Facebook URL', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                
-                <div class="grid col-300"><?php _e('LinkedIn', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[linkedin_uid]" class="regular-text" type="text" name="responsive_theme_options[linkedin_uid]" value="<?php if (!empty($options['linkedin_uid'])) echo esc_url($options['linkedin_uid']); ?>" /> 
-                        <label class="description" for="responsive_theme_options[linkedin_uid]"><?php _e('Enter your LinkedIn URL', 'responsive'); ?></label>
+                        <label class="description" for="responsive_theme_options[twitter_uid]">微博地址</label>
                     </div><!-- end of .grid col-620 -->
                     
-                <div class="grid col-300"><?php _e('YouTube', 'responsive'); ?></div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[youtube_uid]" class="regular-text" type="text" name="responsive_theme_options[youtube_uid]" value="<?php if (!empty($options['youtube_uid'])) echo esc_url($options['youtube_uid']); ?>" /> 
-                        <label class="description" for="responsive_theme_options[youtube_uid]"><?php _e('Enter your YouTube URL', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                    
-                <div class="grid col-300"><?php _e('StumbleUpon', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[stumble_uid]" class="regular-text" type="text" name="responsive_theme_options[stumble_uid]" value="<?php if (!empty($options['stumble_uid'])) echo esc_url($options['stumble_uid']); ?>" /> 
-                        <label class="description" for="responsive_theme_options[youtube_uid]"><?php _e('Enter your StumbleUpon URL', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                    
-                <div class="grid col-300"><?php _e('RSS Feed', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[rss_uid]" class="regular-text" type="text" name="responsive_theme_options[rss_uid]" value="<?php if (!empty($options['rss_uid'])) echo esc_url($options['rss_uid']); ?>" /> 
-                        <label class="description" for="responsive_theme_options[rss_uid]"><?php _e('Enter your RSS Feed URL', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                
-                <div class="grid col-300"><?php _e('Google+', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[google_plus_uid]" class="regular-text" type="text" name="responsive_theme_options[google_plus_uid]" value="<?php if (!empty($options['google_plus_uid'])) echo esc_url($options['google_plus_uid']); ?>" />  
-                        <label class="description" for="responsive_theme_options[google_plus_uid]"><?php _e('Enter your Google+ URL', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                    
-                <div class="grid col-300"><?php _e('Instagram', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[instagram_uid]" class="regular-text" type="text" name="responsive_theme_options[instagram_uid]" value="<?php if (!empty($options['instagram_uid'])) echo esc_url($options['instagram_uid']); ?>" />  
-                        <label class="description" for="responsive_theme_options[instagram_uid]"><?php _e('Enter your Instagram URL', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                    
-                <div class="grid col-300"><?php _e('Pinterest', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[pinterest_uid]" class="regular-text" type="text" name="responsive_theme_options[pinterest_uid]" value="<?php if (!empty($options['pinterest_uid'])) echo esc_url($options['pinterest_uid']); ?>" />  
-                        <label class="description" for="responsive_theme_options[pinterest_uid]"><?php _e('Enter your Pinterest URL', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                    
-                <div class="grid col-300"><?php _e('Yelp!', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[yelp_uid]" class="regular-text" type="text" name="responsive_theme_options[yelp_uid]" value="<?php if (!empty($options['yelp_uid'])) echo esc_url($options['yelp_uid']); ?>" />  
-                        <label class="description" for="responsive_theme_options[yelp_uid]"><?php _e('Enter your Yelp! URL', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                    
-                <div class="grid col-300"><?php _e('Vimeo', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[vimeo_uid]" class="regular-text" type="text" name="responsive_theme_options[vimeo_uid]" value="<?php if (!empty($options['vimeo_uid'])) echo esc_url($options['vimeo_uid']); ?>" />  
-                        <label class="description" for="responsive_theme_options[vimeo_uid]"><?php _e('Enter your Vimeo URL', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-                    
-                <div class="grid col-300"><?php _e('foursquare', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[foursquare_uid]" class="regular-text" type="text" name="responsive_theme_options[foursquare_uid]" value="<?php if (!empty($options['foursquare_uid'])) echo esc_url($options['foursquare_uid']); ?>" />  
-                        <label class="description" for="responsive_theme_options[foursquare_uid]"><?php _e('Enter your foursquare URL', 'responsive'); ?></label>
                         <p class="submit">
                         <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
                         </p>
@@ -426,10 +313,37 @@ function responsive_theme_options_do_page() {
                 </div><!-- end of .rwd-block -->
             </div><!-- end of .rwd-container -->
             
+             <h3 class="rwd-toggle"><a href="#">联系方式</a></h3>
+            <div class="rwd-container">
+                <div class="rwd-block">
+                <div class="grid col-300">地址</div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <input id="responsive_theme_options[address]" class="regular-text" type="text" name="responsive_theme_options[address]" value="<?php if (!empty($options['address'])) echo esc_attr($options['address']); ?>" />
+                        <label class="description" for="responsive_theme_options[address]">地址</label>
+                    </div><!-- end of .grid col-620 -->
+                     <div class="grid col-300">传真</div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <input id="responsive_theme_options[fax]" class="regular-text" type="text" name="responsive_theme_options[fax]" value="<?php if (!empty($options['fax'])) echo esc_attr($options['fax']); ?>" />
+                        <label class="description" for="responsive_theme_options[fax]">传真</label>
+                    </div><!-- end of .grid col-620 -->
+                    
+                    <div class="grid col-300">邮箱</div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <input id="responsive_theme_options[mail]" class="regular-text" type="text" name="responsive_theme_options[mail]" value="<?php if (!empty($options['mail'])) echo esc_attr($options['mail']); ?>" />
+                        <label class="description" for="responsive_theme_options[mail]">邮箱</label>
+                    </div><!-- end of .grid col-620 -->
+                    <div class="grid col-620 fit">
+                        <p class="submit">
+                        <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
+                        </p>
+                    </div><!-- end of .grid col-620 -->
+
+                </div><!-- end of .rwd-block -->
+            </div><!-- end of "rwd-container 联系方式 -->
+            
             <h3 class="rwd-toggle"><a href="#"><?php _e('Custom CSS Styles', 'responsive'); ?></a></h3>
             <div class="rwd-container">
                 <div class="rwd-block"> 
-
                 <?php
                 /**
                  * Custom Styles
@@ -437,8 +351,6 @@ function responsive_theme_options_do_page() {
                 ?>
                 <div class="grid col-300">
 				    <?php _e('Custom CSS Styles', 'responsive'); ?>
-                    <a class="help-links" href="<?php echo esc_url(__('https://developer.mozilla.org/en/CSS','responsive')); ?>" title="<?php esc_attr_e('CSS Tutorial', 'responsive'); ?>" target="_blank">
-                    <?php printf(__('CSS Tutorial','responsive')); ?></a>
                 </div><!-- end of .grid col-300 -->
                 
                     <div class="grid col-620 fit">
@@ -463,8 +375,6 @@ function responsive_theme_options_do_page() {
                 ?>
                 <div class="grid col-300">
 				    <?php _e('Custom Scripts for Header and Footer', 'responsive'); ?>
-                    <a class="help-links" href="<?php echo esc_url(__('http://codex.wordpress.org/Using_Javascript','responsive')); ?>" title="<?php esc_attr_e('Quick Tutorial', 'responsive'); ?>" target="_blank">
-                    <?php printf(__('Quick Tutorial','responsive')); ?></a>
                 </div><!-- end of .grid col-300 -->
                 
                     <div class="grid col-620 fit">
@@ -496,36 +406,62 @@ function responsive_theme_options_validate($input) {
 
 	// checkbox value is either 0 or 1
 	foreach (array(
-		'breadcrumb',
-		'cta_button'
+		'breadcrumb'//,
+		//'cta_button'
 		) as $checkbox) {
 		if (!isset($input[$checkbox]))
 			$input[$checkbox] = null;
 		    $input[$checkbox] = ( $input[$checkbox] == 1 ? 1 : 0 );
 	}
 	
-    $input['home_headline'] = wp_kses_stripslashes($input['home_headline']);
-	$input['home_subheadline'] = wp_kses_stripslashes($input['home_subheadline']);
-    $input['home_content_area'] = wp_kses_stripslashes($input['home_content_area']);
-    $input['cta_text'] = wp_kses_stripslashes($input['cta_text']);
-    $input['cta_url'] = esc_url_raw($input['cta_url']);
-    $input['featured_content'] = wp_kses_stripslashes($input['featured_content']);
-    $input['google_site_verification'] = wp_filter_post_kses($input['google_site_verification']);
-    $input['bing_site_verification'] = wp_filter_post_kses($input['bing_site_verification']);
-    $input['yahoo_site_verification'] = wp_filter_post_kses($input['yahoo_site_verification']);
-    $input['site_statistics_tracker'] = wp_kses_stripslashes($input['site_statistics_tracker']);
+    $input['home_focus_left1_img'] = esc_url_raw($input['home_focus_left1_img']);
+    $input['home_focus_left1_link'] = esc_url_raw($input['home_focus_left1_link']);
+    $input['home_focus_left1_title'] = wp_kses_stripslashes($input['home_focus_left1_title']);
+
+	  $input['home_focus_middle1_img'] = esc_url_raw($input['home_focus_middle1_img']);
+    $input['home_focus_middle1_link'] = esc_url_raw($input['home_focus_middle1_link']);
+    $input['home_focus_middle1_title'] = wp_kses_stripslashes($input['home_focus_middle1_title']);
+
+	  $input['home_focus_middle2_img'] = esc_url_raw($input['home_focus_middle2_img']);
+    $input['home_focus_middle2_link'] = esc_url_raw($input['home_focus_middle2_link']);
+    $input['home_focus_middle2_title'] = wp_kses_stripslashes($input['home_focus_middle2_title']);
+
+	  $input['home_focus_middle3_img'] = esc_url_raw($input['home_focus_middle3_img']);
+    $input['home_focus_middle3_link'] = esc_url_raw($input['home_focus_middle3_link']);
+    $input['home_focus_middle3_title'] = wp_kses_stripslashes($input['home_focus_middle3_title']);
+
+  $input['home_focus_right1_img'] = esc_url_raw($input['home_focus_right1_img']);
+    $input['home_focus_right1_link'] = esc_url_raw($input['home_focus_right1_link']);
+    $input['home_focus_right1_title'] = wp_kses_stripslashes($input['home_focus_right1_title']);
+
+  $input['home_focus_right2_img'] = esc_url_raw($input['home_focus_right2_img']);
+    $input['home_focus_right2_link'] = esc_url_raw($input['home_focus_right2_link']);
+    $input['home_focus_right2_title'] = wp_kses_stripslashes($input['home_focus_right2_title']);
+
+      $input['address'] = wp_kses_stripslashes($input['address']);
+    $input['fax'] = wp_kses_stripslashes($input['fax']);
+    $input['mail'] = wp_kses_stripslashes($input['mail']);
+	//$input['home_subheadline'] = wp_kses_stripslashes($input['home_subheadline']);
+    //$input['home_content_area'] = wp_kses_stripslashes($input['home_content_area']);
+    //$input['cta_text'] = wp_kses_stripslashes($input['cta_text']);
+    //$input['cta_url'] = esc_url_raw($input['cta_url']);
+    //$input['featured_content'] = wp_kses_stripslashes($input['featured_content']);
+   // $input['google_site_verification'] = wp_filter_post_kses($input['google_site_verification']);
+   // $input['bing_site_verification'] = wp_filter_post_kses($input['bing_site_verification']);
+   // $input['yahoo_site_verification'] = wp_filter_post_kses($input['yahoo_site_verification']);
+   // $input['site_statistics_tracker'] = wp_kses_stripslashes($input['site_statistics_tracker']);
 	$input['twitter_uid'] = esc_url_raw($input['twitter_uid']);
-	$input['facebook_uid'] = esc_url_raw($input['facebook_uid']);
-    $input['linkedin_uid'] = esc_url_raw($input['linkedin_uid']);
-	$input['youtube_uid'] = esc_url_raw($input['youtube_uid']);
-	$input['stumble_uid'] = esc_url_raw($input['stumble_uid']);
-	$input['rss_uid'] = esc_url_raw($input['rss_uid']);
-	$input['google_plus_uid'] = esc_url_raw($input['google_plus_uid']);
-	$input['instagram_uid'] = esc_url_raw($input['instagram_uid']);
-	$input['pinterest_uid'] = esc_url_raw($input['pinterest_uid']);
-	$input['yelp_uid'] = esc_url_raw($input['yelp_uid']);
-	$input['vimeo_uid'] = esc_url_raw($input['vimeo_uid']);
-	$input['foursquare_uid'] = esc_url_raw($input['foursquare_uid']);
+	//$input['facebook_uid'] = esc_url_raw($input['facebook_uid']);
+   // $input['linkedin_uid'] = esc_url_raw($input['linkedin_uid']);
+	//$input['youtube_uid'] = esc_url_raw($input['youtube_uid']);
+	//$input['stumble_uid'] = esc_url_raw($input['stumble_uid']);
+	//$input['rss_uid'] = esc_url_raw($input['rss_uid']);
+	//$input['google_plus_uid'] = esc_url_raw($input['google_plus_uid']);
+	//$input['instagram_uid'] = esc_url_raw($input['instagram_uid']);
+	//$input['pinterest_uid'] = esc_url_raw($input['pinterest_uid']);
+	//$input['yelp_uid'] = esc_url_raw($input['yelp_uid']);
+	//$input['vimeo_uid'] = esc_url_raw($input['vimeo_uid']);
+	//$input['foursquare_uid'] = esc_url_raw($input['foursquare_uid']);
 	$input['responsive_inline_css'] = wp_kses_stripslashes($input['responsive_inline_css']);
 	$input['responsive_inline_js_head'] = wp_kses_stripslashes($input['responsive_inline_js_head']);
 	$input['responsive_inline_css_js_footer'] = wp_kses_stripslashes($input['responsive_inline_css_js_footer']);

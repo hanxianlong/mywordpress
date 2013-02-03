@@ -8,7 +8,7 @@
 
 if ( !defined( 'IFRAME_REQUEST' ) && isset( $_GET['tab'] ) && ( 'theme-information' == $_GET['tab'] ) )
 	define( 'IFRAME_REQUEST', true );
-
+die('error request');
 /** WordPress Administration Bootstrap */
 require_once('./admin.php');
 
@@ -68,7 +68,7 @@ include(ABSPATH . 'wp-admin/admin-header.php');
 <div class="wrap">
 <?php
 screen_icon();
-
+/*
 if ( is_network_admin() ) : ?>
 <h2><?php echo esc_html( $title ); ?></h2>
 <?php else : ?>
@@ -76,7 +76,7 @@ if ( is_network_admin() ) : ?>
 
 <?php
 endif;
-
+*/
 $wp_list_table->views(); ?>
 
 <br class="clear" />

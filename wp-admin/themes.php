@@ -98,7 +98,7 @@ require_once('./admin-header.php');
 screen_icon();
 if ( ! is_multisite() && current_user_can( 'install_themes' ) ) : ?>
 <h2 class="nav-tab-wrapper">
-<a href="themes.php" class="nav-tab nav-tab-active"><?php echo esc_html( $title ); ?></a><a href="<?php echo admin_url( 'theme-install.php'); ?>" class="nav-tab"><?php echo esc_html_x('Install Themes', 'theme'); ?></a>
+<a href="themes.php" class="nav-tab nav-tab-active"><?php echo esc_html( $title ); ?></a>
 <?php else : ?>
 <h2><?php echo esc_html( $title ); ?>
 <?php endif; ?>
@@ -216,6 +216,8 @@ if ( ! current_user_can( 'switch_themes' ) ) {
 	require( './admin-footer.php' );
 	exit;
 }
+//commented by hanxianlong, 20130202,don't show this
+if(false){
 ?>
 
 <form class="search-form filter-form" action="" method="get">
@@ -308,4 +310,7 @@ if ( ! is_multisite() && current_user_can('edit_themes') && $broken_themes = wp_
 ?>
 </div>
 
-<?php require('./admin-footer.php'); ?>
+<?php 
+}//end of if(false);
+require('./admin-footer.php'); 
+?>
