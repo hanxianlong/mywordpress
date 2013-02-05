@@ -1,5 +1,4 @@
 <?php
-
 // Exit if accessed directly
 if ( !defined('ABSPATH')) exit;
 
@@ -79,26 +78,24 @@ if (!function_exists('responsive_setup')):
 	    );
 
 		if ( function_exists('get_custom_header')) {
-			
-        add_theme_support('custom-background');
-		
+			//add_theme_support('custom-background');
 		} else {
 		
-		// < 3.4 Backward Compatibility
+			// < 3.4 Backward Compatibility
 		
-		/**
-         * This feature allows users to use custom background for a theme.
-         * @see http://codex.wordpress.org/Function_Reference/add_custom_background
-         */
+			/**
+			 * This feature allows users to use custom background for a theme.
+			 * @see http://codex.wordpress.org/Function_Reference/add_custom_background
+			 */
 		
-        add_custom_background();
+			//add_custom_background();
 		
 		}
 
 		// WordPress 3.4 >
 		if (function_exists('get_custom_header')) {
 			
-		add_theme_support('custom-header', array (
+		/*add_theme_support('custom-header', array (
 	        // Header image default
 	       'default-image'			=> get_template_directory_uri() . '/images/default-logo.png',
 	        // Header text display default
@@ -122,7 +119,7 @@ if (!function_exists('responsive_setup')):
 					border:none;
 				}
              </style><?php
-        }
+        }*/
 	   
 	    } else {
 		   
@@ -139,7 +136,6 @@ if (!function_exists('responsive_setup')):
         define('HEADER_IMAGE_HEIGHT', 100);
         define('NO_HEADER_TEXT', true);
 		
-		
 		// gets included in the admin header
         function responsive_admin_header_style() {
             ?><style type="text/css">
@@ -153,7 +149,6 @@ if (!function_exists('responsive_setup')):
          }
          
 		 add_custom_image_header('', 'responsive_admin_header_style');
-		
 	    }
     }
 
@@ -546,7 +541,7 @@ endif;
             'after_widget' => '</div>'
         ));
 
-        register_sidebar(array(
+       /* register_sidebar(array(
             'name' => __('Right Sidebar', 'responsive'),
             'description' => __('Area 2 - sidebar-right.php', 'responsive'),
             'id' => 'right-sidebar',
@@ -585,9 +580,9 @@ endif;
             'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
             'after_widget' => '</div>'
         ));
-
+		*/
         register_sidebar(array(
-            'name' => __('Home Widget 1', 'responsive'),
+            'name' => __('Home-Main-Content-Left', 'responsive'),
             'description' => __('Area 6 - sidebar-home.php', 'responsive'),
             'id' => 'home-widget-1',
             'before_title' => '<div id="widget-title-one" class="widget-title-home"><h3>',
@@ -597,7 +592,7 @@ endif;
         ));
 
         register_sidebar(array(
-            'name' => __('Home Widget 2', 'responsive'),
+			'name' => __('Home-Main-Content-Right', 'responsive'),
             'description' => __('Area 7 - sidebar-home.php', 'responsive'),
             'id' => 'home-widget-2',
             'before_title' => '<div id="widget-title-two" class="widget-title-home"><h3>',
@@ -607,7 +602,7 @@ endif;
         ));
 
         register_sidebar(array(
-            'name' => __('Home Widget 3', 'responsive'),
+			'name' => 'Home-Main-Content-Bottom',
             'description' => __('Area 8 - sidebar-home.php', 'responsive'),
             'id' => 'home-widget-3',
             'before_title' => '<div id="widget-title-three" class="widget-title-home"><h3>',
@@ -616,7 +611,7 @@ endif;
             'after_widget' => '</div>'
         ));
 
-        register_sidebar(array(
+      /*  register_sidebar(array(
             'name' => __('Gallery Sidebar', 'responsive'),
             'description' => __('Area 9 - sidebar-gallery.php', 'responsive'),
             'id' => 'gallery-widget',
@@ -644,7 +639,7 @@ endif;
             'after_title' => '</div>',
             'before_widget' => '<div id="%1$s" class="%2$s">',
             'after_widget' => '</div>'
-        ));
+        ));*/
     }
 	
     add_action('widgets_init', 'responsive_widgets_init');

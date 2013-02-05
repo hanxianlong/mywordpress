@@ -41,7 +41,7 @@ function responsive_theme_options_init() {
  * Load up the menu page
  */
 function responsive_theme_options_add_page() {
-    add_theme_page(__('Theme Options', 'responsive'), __('Theme Options', 'responsive'), 'edit_theme_options', 'theme_options', 'responsive_theme_options_do_page');
+    add_theme_page(__('Theme Options', 'responsive'), __('Theme Options', 'responsive'), 'edit_theme_options', 'theme_options','responsive_theme_options_do_page');
 }
 
 /**
@@ -441,28 +441,8 @@ function responsive_theme_options_validate($input) {
       $input['address'] = wp_kses_stripslashes($input['address']);
     $input['fax'] = wp_kses_stripslashes($input['fax']);
     $input['mail'] = wp_kses_stripslashes($input['mail']);
-	//$input['home_subheadline'] = wp_kses_stripslashes($input['home_subheadline']);
-    //$input['home_content_area'] = wp_kses_stripslashes($input['home_content_area']);
-    //$input['cta_text'] = wp_kses_stripslashes($input['cta_text']);
-    //$input['cta_url'] = esc_url_raw($input['cta_url']);
-    //$input['featured_content'] = wp_kses_stripslashes($input['featured_content']);
-   // $input['google_site_verification'] = wp_filter_post_kses($input['google_site_verification']);
-   // $input['bing_site_verification'] = wp_filter_post_kses($input['bing_site_verification']);
-   // $input['yahoo_site_verification'] = wp_filter_post_kses($input['yahoo_site_verification']);
-   // $input['site_statistics_tracker'] = wp_kses_stripslashes($input['site_statistics_tracker']);
-	$input['twitter_uid'] = esc_url_raw($input['twitter_uid']);
-	//$input['facebook_uid'] = esc_url_raw($input['facebook_uid']);
-   // $input['linkedin_uid'] = esc_url_raw($input['linkedin_uid']);
-	//$input['youtube_uid'] = esc_url_raw($input['youtube_uid']);
-	//$input['stumble_uid'] = esc_url_raw($input['stumble_uid']);
-	//$input['rss_uid'] = esc_url_raw($input['rss_uid']);
-	//$input['google_plus_uid'] = esc_url_raw($input['google_plus_uid']);
-	//$input['instagram_uid'] = esc_url_raw($input['instagram_uid']);
-	//$input['pinterest_uid'] = esc_url_raw($input['pinterest_uid']);
-	//$input['yelp_uid'] = esc_url_raw($input['yelp_uid']);
-	//$input['vimeo_uid'] = esc_url_raw($input['vimeo_uid']);
-	//$input['foursquare_uid'] = esc_url_raw($input['foursquare_uid']);
-	$input['responsive_inline_css'] = wp_kses_stripslashes($input['responsive_inline_css']);
+ 	$input['twitter_uid'] = esc_url_raw($input['twitter_uid']);
+ 	$input['responsive_inline_css'] = wp_kses_stripslashes($input['responsive_inline_css']);
 	$input['responsive_inline_js_head'] = wp_kses_stripslashes($input['responsive_inline_js_head']);
 	$input['responsive_inline_css_js_footer'] = wp_kses_stripslashes($input['responsive_inline_css_js_footer']);
 	

@@ -8,11 +8,11 @@
  */
 
 if ( is_network_admin() )
-	do_action('_network_admin_menu');
+	 do_action('_network_admin_menu');
 elseif ( is_user_admin() )
-	do_action('_user_admin_menu');
+	 do_action('_user_admin_menu');
 else
-	do_action('_admin_menu');
+	 do_action('_admin_menu');
 
 // Create list of page plugin hook names.
 foreach ($menu as $menu_page) {

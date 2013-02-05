@@ -44,7 +44,7 @@ function responsive_container_end() {
  * @see header.php
  */
 function responsive_header() {
-    do_action('responsive_header');
+    //do_action('responsive_header');
 }
 
 /**
