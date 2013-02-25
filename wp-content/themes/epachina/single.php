@@ -32,7 +32,7 @@ if ( !defined('ABSPATH')) exit;
         <?php endif; ?> 
           
             <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <h1 class="post-title"><?php the_title(); ?></h1>
+                <h1 class="single-post-title"><?php the_title(); ?></h1>
 
                 <div class="post-meta">
                 <?php responsive_post_meta_data(); ?>
@@ -47,7 +47,7 @@ if ( !defined('ABSPATH')) exit;
                                 
                 <div class="post-entry">
                     <?php the_content(__('Read more &#8250;', 'responsive')); ?>
-                    
+
                     <?php if ( get_the_author_meta('description') != '' ) : ?>
                     
                     <div id="author-meta">
@@ -57,11 +57,23 @@ if ( !defined('ABSPATH')) exit;
                     </div><!-- end of #author-meta -->
                     
                     <?php endif; // no description, no author's meta ?>
-                    
+
                     <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style clear">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_tsina">新浪微博</a>
+<a class="jiathis_button_renren">人人网</a>
+<a class="jiathis_button_kaixin001">开心网</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_fb">Facebook</a>
+<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1355719076519473" charset="utf-8"></script>
+<!-- JiaThis Button END -->
                 </div><!-- end of .post-entry -->
-                
-                <div class="navigation">
+	
+                <div class="navigation clear">
 			        <div class="previous"><?php previous_post_link( '&#8249; %link' ); ?></div>
                     <div class="next"><?php next_post_link( '%link &#8250;' ); ?></div>
 		        </div><!-- end of .navigation -->
@@ -70,8 +82,6 @@ if ( !defined('ABSPATH')) exit;
 				    <?php the_tags(__('Tagged with:', 'responsive') . ' ', ', ', '<br />'); ?> 
 					<?php printf(__('Posted in %s', 'responsive'), get_the_category_list(', ')); ?> 
                 </div><!-- end of .post-data -->             
-
-            <div class="post-edit"><?php edit_post_link(__('Edit', 'responsive')); ?></div>             
             </div><!-- end of #post-<?php the_ID(); ?> -->
             
 			<?php comments_template( '', true ); ?>
@@ -104,6 +114,5 @@ if ( !defined('ABSPATH')) exit;
 <?php endif; ?>  
       
         </div><!-- end of #content -->
-
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -23,6 +23,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin: 0;
 	padding: 0;
 	vertical-align: baseline;
+	 font-family: "Trebuchet MS",Helvetica,"Microsoft YaHei",Georgia,sans-serif;
 }
 
 /*HTML5 display-role reset for older browsers */
@@ -253,7 +254,15 @@ sub {
 }
 
 .col-620 {
-	width: 65.957446808511%;
+	width: 67.957446808511%;
+}
+
+.col-650 {
+	width: 70.957446808511%;
+}
+
+.col-280 {
+	width: 28%;
 }
 
 .col-700 {
@@ -1431,7 +1440,7 @@ form div {
 	clear: both;
 	color: #9f9f9f;
 	font-size: 12px;
-	margin-bottom: 10px;
+	margin: 10px;
 }
 
 .post-edit {
@@ -1613,7 +1622,6 @@ form div {
 .widget-title, 
 .widget-title-home h3 {
 	display: block;
-       font-family: 微软雅黑,黑体;
 	font-size: 16px;
 	line-height: 23px;
 	margin: 0;
@@ -2930,14 +2938,15 @@ BDO[DIR="rtl"] {
 /*The last 29 days of the month are the hardest."- Nikola Tesla*/
 /**/
 .category-blogs{ border-bottom:1px dotted gray;}
-.post-title{font-size:15px; margin-top: 1.2em; padding-left: 20px;}
-.post-title a{ color:#E76335;}
+.post-title{font-size:15px; margin-top: 1.2em; padding-left: 20px; }
+.post-title a{ color:#BA350F;}
 .post-title a:hover{ color:#BA350F;}
-.post-meta a{color:#E76335}
+.single-post-title{ font-size:25px; color:#900; text-align:center; font-weight:bold;letter-spacing:3px;}
+.post-meta a{color:#900; font-weight:normal;}
 .post-meta a:hover{ text-decoration:underline;}
 body{margin:0px;}
 .contact span{background: url(images/bg.gif) 0px 5px; height: 40px; width:43px; display:inline-block; border:0;}
-.contact h3{ display:inline; padding-bottom: 2px; padding-left: 5px; font-family:微软雅黑,黑体}
+.contact h3{ display:inline; padding-bottom: 2px; padding-left: 5px;}
 .contact span.mail{ background-position: 0px -37px;}
 .contact span.fax{ background-position:  0px -84px;}
 .contact p{ text-indent: 50px;}
@@ -2954,7 +2963,7 @@ body{margin:0px;}
 .home-widgets .widget_recent_video .video-item{float:left; width:220px; height:200px; margin-top:20px; margin-left:15px; }
 .home-widgets .widget_recent_video { border:0px; margin:0 auto; width:100%; padding-left:0px;}
 .line{height:4px; background:#ccc;}
-.home-notice{width: 90%;padding: 5px;overflow: hidden;background: #FFEA97;border: 1px solid #E1B400;color: #779B39; margin:0 auto; margin-top: -20px;}
+.home-notice{overflow: hidden;background: #FFEA97;border: 1px solid #E1B400;color: #779B39;  margin-top: -20px; padding-left:20px; padding-right:20px;}
 
 .widget_categories { padding-top:20px;}
 .widget_categories .widget-title{ margin-bottom:15px; border-bottom:1px solid #ccc; font-weight:bold;}
@@ -2962,3 +2971,4 @@ body{margin:0px;}
 .widget_categories a{ padding-left:10px !important; text-decoration:none; display:inline-block !important; line-height: 30px; width:95%;}
 .widget_categories a:hover{background:#005288; color:#fff;}
 .current-cat >a{ color:Red;}
+.home-new-articles{ border:1px solid #E5E5E5; border-radius:4px; padding-left:10px; padding-right:10px; padding-top:20px; }

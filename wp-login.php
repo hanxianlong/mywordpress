@@ -95,8 +95,10 @@ function login_header($title = 'Log In', $message = '', $wp_error = '') {
 	?>
 	</head>
 	<body class="login <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
-	<div id="login">
+	<div id="login" class="clear">
 		<h1><?php bloginfo( 'name' ); ?></h1></div>
+
+	<div style=" margin:auto; width:400px">
 	<?php
 
 	unset( $login_header_url, $login_header_title );
@@ -163,6 +165,7 @@ function wp_shake_js() {
 	if ( wp_is_mobile() )
 		return;
 ?>
+</div>
 <script type="text/javascript">
 addLoadEvent = function(func){if(typeof jQuery!="undefined")jQuery(document).ready(func);else if(typeof wpOnload!='function'){wpOnload=func;}else{var oldonload=wpOnload;wpOnload=function(){oldonload();func();}}};
 function s(id,pos){g(id).left=pos+'px';}
@@ -701,7 +704,6 @@ default:
 		<input type="hidden" name="testcookie" value="1" />
 	</p>
 </form>
-
 <?php if ( !$interim_login ) { ?>
 <p id="nav">
 <?php if ( isset($_GET['checkemail']) && in_array( $_GET['checkemail'], array('confirm', 'newpass') ) ) : ?>

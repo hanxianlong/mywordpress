@@ -47,7 +47,7 @@ if ( !defined('ABSPATH')) exit;
                 
                 <div class="post-meta">
                     <?php printf(__('Posted in %s', 'responsive'), get_the_category_list(', ')); ?>
-                    <?php the_tags(__('Tagged with:', 'responsive') . ' ', ', ', '<br />'); ?> 
+                    <?php the_tags(__('Tagged with:', 'responsive') . ' ', ', ', ''); ?> 
                     <?php responsive_post_meta_data(); ?>
                 
 		<?php if ( comments_open() ) : ?>

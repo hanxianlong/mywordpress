@@ -33,7 +33,7 @@ if ( !defined('ABSPATH')) exit;
         <?php responsive_widgets_end(); // responsive after widgets hook ?>
         </div><!-- end of .col-300 -->
 
-        <div class="grid col-300 right fit widget-home-right">
+        <div class="grid col-280 right fit widget-home-right">
         <?php //responsive_widgets(); // responsive above widgets hook ?>
 			<?php if (!dynamic_sidebar('home-widget-2')) : ?>
             <div class="widget-wrapper">

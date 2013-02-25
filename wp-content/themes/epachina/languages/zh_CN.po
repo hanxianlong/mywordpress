@@ -109,7 +109,7 @@ msgstr "标签："
 #: blog-excerpt.php archive.php sidebar-content-half-page.php
 #: sidebar-content-page.php single.php
 msgid "Posted in %s"
-msgstr "文章分类 %s"
+msgstr "分类 %s"
 
 #: page.php landing-page.php index.php image.php full-width-page.php
 #: content-sidebar-page.php content-sidebar-half-page.php blog.php

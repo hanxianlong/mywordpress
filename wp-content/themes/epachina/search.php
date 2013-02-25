@@ -48,9 +48,6 @@ if ( !defined('ABSPATH')) exit;
                     <?php the_excerpt(); ?>
                     <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
                 </div><!-- end of .post-entry -->
-                           
-
-            <div class="post-edit"><?php edit_post_link(__('Edit', 'responsive')); ?></div>               
             </div><!-- end of #post-<?php the_ID(); ?> -->
             
         <?php endwhile; ?> 
