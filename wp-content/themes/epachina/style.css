@@ -213,6 +213,7 @@ sub {
 .col-60, 
 .col-140, 
 .col-220, 
+.col-880, 
 .col-300, 
 .col-380, 
 .col-460, 
@@ -2963,7 +2964,7 @@ body{margin:0px;}
 .home-widgets .widget_recent_video .video-item{float:left; width:220px; height:200px; margin-top:20px; margin-left:15px; }
 .home-widgets .widget_recent_video { border:0px; margin:0 auto; width:100%; padding-left:0px;}
 .line{height:4px; background:#ccc;}
-.home-notice{overflow: hidden;background: #FFEA97;border: 1px solid #E1B400;color: #779B39;  margin-top: -20px; padding-left:20px; padding-right:20px;}
+.home-notice{overflow: hidden;background: #FFEA97;border: 1px solid #E1B400;color: #779B39;  margin-top: -20px; padding-left:20px; padding-right:20px; margin-right:10px;margin-left:10px;}
 
 .widget_categories { padding-top:20px;}
 .widget_categories .widget-title{ margin-bottom:15px; border-bottom:1px solid #ccc; font-weight:bold;}
