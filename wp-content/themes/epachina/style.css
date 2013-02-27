@@ -1248,7 +1248,7 @@ form div {
 }
 
 #header {
-	margin: 0;position:relative;
+	margin: 0;position:relative; z-index:1;
 }
 
 #footer {
@@ -1715,6 +1715,7 @@ form div {
 	padding: 0;
 	position: relative;
 	z-index: 5;
+	_width:0; white-space:nowrap;/*ie6 hack*/
 }
 
 .menu li:hover {
@@ -1736,7 +1737,10 @@ form div {
 
 .menu li:hover > ul {
 	top: 100%;
-	visibility: visible;
+	visibility: visible; border:0px;
+}
+
+.menu li:hover > ul li a {
 }
 
 .menu li li:hover > ul {
@@ -1791,7 +1795,7 @@ form div {
 	padding: 0 0.9em;
 	position: relative;
 	text-decoration: none;
-	text-shadow: 0 -1px 0 #000;
+	text-shadow: 0 -1px 0 #000; 
 }
 
 .menu a:hover {
@@ -1813,13 +1817,6 @@ form div {
 	background-color: #0081d0;
 }
 
-.home .menu .current_page_item a {
-    background: none;
-	background-color: transparent;
-    background-image: none;
-    filter: none;
-}
-
 .menu li li {
 	background: #fff;
 	background-image: none;
@@ -1830,8 +1827,9 @@ form div {
 	width: auto;
 }
 
-.menu li li a {
-	background: transparent !important;
+.menu li li a 
+{
+    background:transparent url(images/ie7-fix.gif) repeat !important;
 	border: none;
 	color: #444;
 	font-size: 12px;
@@ -2139,8 +2137,7 @@ form div {
 	line-height: 20px;
 	padding: 5px 10px;
 	text-shadow: none;
-}
-
+} 
 .sub-header-menu li li a:hover {
 	background: #f9f9f9;
 	background-image: none;
@@ -2173,7 +2170,7 @@ form div {
 /* =Sub Header Menu IE Fixes
 -------------------------------------------------------------- */
 .ie7 .sub-header-menu ul {
-	background: url(images/ie7-fix.gif) repeat;
+	 background: url(images/ie7-fix.gif) repeat;
 }
 
 .ie7 .sub-header-menu li li a  {
